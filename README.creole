@@ -1,3 +1,4 @@
 = Alexandra =
 Wikidot related code by Pixeltasim
-Core bot from Skybot with modifications. 
+
+Core bot from Skybot with modifications
