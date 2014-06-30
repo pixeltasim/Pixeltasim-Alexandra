@@ -1,0 +1,52 @@
+14:13:24 :envy.il.us.synirc.net 001 Alexandra :Welcome to the synIRC IRC Network Alexandra!~skybot@pool-96-253-116-52.rcmdva.fios.verizon.net
+14:13:24 :envy.il.us.synirc.net 002 Alexandra :Your host is envy.il.us.synirc.net, running version Unreal3.2.10.3
+14:13:24 :envy.il.us.synirc.net 003 Alexandra :This server was created Mon Jun 2 2014 at 01:08:34 CDT
+14:13:24 :envy.il.us.synirc.net 004 Alexandra envy.il.us.synirc.net Unreal3.2.10.3 iowghraAsORTVSxNCWqBzvdHtGpI lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+14:13:24 :envy.il.us.synirc.net 005 Alexandra UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=40 CHANLIMIT=#:40 MAXLIST=b:60,e:60,I:60 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 MAXTARGETS=20 :are supported by this server
+14:13:24 :envy.il.us.synirc.net 005 Alexandra WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=synIRC CASEMAPPING=ascii EXTBAN=~,qjncrRa ELIST=MNUCT STATUSMSG=~&@%+ :are supported by this server
+14:13:24 :envy.il.us.synirc.net 005 Alexandra EXCEPTS INVEX CMDS=KNOCK,MAP,DCCALLOW,USERIP,STARTTLS :are supported by this server
+14:13:24 :envy.il.us.synirc.net 251 Alexandra :There are 27 users and 6412 invisible on 17 servers
+14:13:24 :envy.il.us.synirc.net 252 Alexandra 27 :operator(s) online
+14:13:24 :envy.il.us.synirc.net 253 Alexandra 1 :unknown connection(s)
+14:13:24 :envy.il.us.synirc.net 254 Alexandra 2426 :channels formed
+14:13:24 :envy.il.us.synirc.net 255 Alexandra :I have 542 clients and 0 servers
+14:13:24 :envy.il.us.synirc.net 265 Alexandra 542 905 :Current local users 542, max 905
+14:13:24 :envy.il.us.synirc.net 266 Alexandra 6439 7920 :Current global users 6439, max 7920
+14:13:24 :envy.il.us.synirc.net 375 Alexandra :- envy.il.us.synirc.net Message of the Day - 
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :- 7/7/2007 21:20
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :- This is the short MOTD. To view the complete MOTD type /motd
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :- 
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-             ######  ##    ## ##    ## #### ########   ######  
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-            ##    ##  ##  ##  ###   ##  ##  ##     ## ##    ## 
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-            ##         ####   ####  ##  ##  ##     ## ##       
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-             ######     ##    ## ## ##  ##  ########  ##       
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-                  ##    ##    ##  ####  ##  ##   ##   ##       
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-            ##    ##    ##    ##   ###  ##  ##    ##  ##    ##
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-             ######     ##    ##    ## #### ##     ##  ######  
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :- 
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-          |                                                    |
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-        --+----------------------------------------------------+--
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-          |                                                    |
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-          | Welcome on envy.il.us.synirc.net                   |
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-          | Available port(s): 6660-6669                       |
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-          | SSL port: 7001                                     |
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-          |                                                    |
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-          | Server Admin: Eien <eien@synirc.net>               |
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-          |                                                    |
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-        --+----------------------------------------------------+--
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :-          |                                                    |
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :- 
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :- DISCLAIMER:
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :- 
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :- synIRC.net will scan your IP for open proxies upon connection to our 
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :- services.  You must be 18 or older to connect and chat on our services, or 
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :- have parental consent. synIRC.net and its affiliates are not responsible 
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :- for any bodily or mental harm that could possibly come from using its 
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :- services. synIRC.net is not responsible for any data received or sent 
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :- out to our clients. By connecting, you consent to have logging of your 
+14:13:24 :envy.il.us.synirc.net 372 Alexandra :- conversations done by other clients and are also bound to the rules and 
+14:13:25 :envy.il.us.synirc.net 372 Alexandra :- regulations that can be found at http://www.synirc.net/charter/
+14:13:25 :envy.il.us.synirc.net 372 Alexandra :- 
+14:13:25 :envy.il.us.synirc.net 376 Alexandra :End of /MOTD command.
+14:13:25 :envy.il.us.synirc.net 353 Alexandra = #scptestbot :Alexandra @Pixeltasim 
+14:13:25 :envy.il.us.synirc.net 366 Alexandra #scptestbot :End of /NAMES list.

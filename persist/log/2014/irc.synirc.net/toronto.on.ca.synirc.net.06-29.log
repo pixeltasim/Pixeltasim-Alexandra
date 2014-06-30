@@ -1,0 +1,68 @@
+06:20:45 :toronto.on.ca.synirc.net 332 Alexandra #ThingsBetwixt :Shining a light into the fog. | Future canon room.
+06:20:45 :toronto.on.ca.synirc.net 333 Alexandra #ThingsBetwixt thedeadlymoose 1402392772
+06:20:45 :toronto.on.ca.synirc.net 353 Alexandra = #ThingsBetwixt :Alexandra ~thedeadlymoose 
+06:20:45 :toronto.on.ca.synirc.net 366 Alexandra #ThingsBetwixt :End of /NAMES list.
+14:18:53 :toronto.on.ca.synirc.net 001 Alexandra :Welcome to the synIRC IRC Network Alexandra!~skybot@pool-96-253-116-52.rcmdva.fios.verizon.net
+14:18:53 :toronto.on.ca.synirc.net 002 Alexandra :Your host is toronto.on.ca.synirc.net, running version Unreal3.2.10.2
+14:18:53 :toronto.on.ca.synirc.net 003 Alexandra :This server was created Wed Nov 27 2013 at 00:01:19 EST
+14:18:53 :toronto.on.ca.synirc.net 004 Alexandra toronto.on.ca.synirc.net Unreal3.2.10.2 iowghraAsORTVSxNCWqBzvdHtGpI lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+14:18:53 :toronto.on.ca.synirc.net 005 Alexandra CMDS=KNOCK,MAP,DCCALLOW,USERIP,STARTTLS UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=40 CHANLIMIT=#:40 MAXLIST=b:60,e:60,I:60 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 :are supported by this server
+14:18:53 :toronto.on.ca.synirc.net 005 Alexandra MAXTARGETS=20 WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=synIRC CASEMAPPING=ascii EXTBAN=~,qjncrRa ELIST=MNUCT :are supported by this server
+14:18:53 :toronto.on.ca.synirc.net 005 Alexandra STATUSMSG=~&@%+ EXCEPTS INVEX :are supported by this server
+14:18:53 :toronto.on.ca.synirc.net 251 Alexandra :There are 27 users and 6425 invisible on 17 servers
+14:18:53 :toronto.on.ca.synirc.net 252 Alexandra 28 :operator(s) online
+14:18:53 :toronto.on.ca.synirc.net 254 Alexandra 2431 :channels formed
+14:18:53 :toronto.on.ca.synirc.net 255 Alexandra :I have 753 clients and 0 servers
+14:18:53 :toronto.on.ca.synirc.net 265 Alexandra 753 1448 :Current local users 753, max 1448
+14:18:53 :toronto.on.ca.synirc.net 266 Alexandra 6452 7920 :Current global users 6452, max 7920
+14:18:53 :toronto.on.ca.synirc.net 375 Alexandra :- toronto.on.ca.synirc.net Message of the Day - 
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :- 11/6/2014 22:12
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-                                    ooooo ooooooooo.     .oooooo.   
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-                                    `888' `888   `Y88.  d8P'  `Y8b  
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-    .oooo.o oooo    ooo ooo. .oo.    888   888   .d88' 888          
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-   d88(  "8  `88.  .8'  `888P"Y88b   888   888ooo88P'  888          
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-   `"Y88b.    `88..8'    888   888   888   888`88b.    888          
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-   o.  )88b    `888'     888   888   888   888  `88b.  `88b    ooo  
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-   8""888P'     .8'     o888o o888o o888o o888o  o888o  `Y8bood8P'  
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-            .o..P'                                                  
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-            `Y8P'                                                   
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-                                                            .
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-                                                            |
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-                                                           < >
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-                                                            |
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-                                                          (^ ^)
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-                                                           `|`
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-                                ______                      |
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-                      .-,__,-. |""""""|                     |
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-                      | ]""[ | |""""""|       ,.,__         |
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-                      | |""| | |""""""|     /`.     ` ;     |
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-                      | |""| | |""""""|   /`.  '.       ;   |
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-                      | |""| | |""""""| /`.  '.  .       ; /^\
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-  ----------------------'-'--'-'-'------''---'---'--'-------'---'----
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :- 
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-   toronto.on.ca.synirc.net (ports: 6660-9, 7000, ssl: +6697, +7001)
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-   This server is located at 905 King Street W, Toronto, ON, Canada.
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-     At the corner of King St and Strachan Ave in Liberty Village.
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-   
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-     admin: slushey <slushey@synirc.net>
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-   coadmin: basket <basket@synirc.net>
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-     ircop: Lioness <lioness@synirc.net>
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-            minusX <minusx@synirc.net>
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :- 
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-       url: http://www.synirc.net
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-    forums: http://forum.synirc.net
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-   support: #help
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :- 
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :-  -------------------------------------------------------------------
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :- 
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :- synIRC.net will scan your IP for open proxies upon connection to our
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :- services. You must be 18 or older to connect and chat on our services, or
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :- have parental consent. synIRC.net and its affiliates are not responsible
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :- for any bodily or mental harm that could possibly come from using its
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :- services. synIRC.net is not responsible for any data received or sent
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :- out to our clients. By connecting, you consent to have logging of your
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :- conversations done by other clients and are also bound to the rules and
+14:18:53 :toronto.on.ca.synirc.net 372 Alexandra :- regulations that can be found at http://www.synirc.net/charter/ 
+14:18:53 :toronto.on.ca.synirc.net 376 Alexandra :End of /MOTD command.
+14:18:54 :toronto.on.ca.synirc.net 353 Alexandra = #scptestbot :Alexandra @Pixeltasim 
+14:18:54 :toronto.on.ca.synirc.net 366 Alexandra #scptestbot :End of /NAMES list.

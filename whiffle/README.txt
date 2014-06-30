@@ -1,0 +1,272 @@
+===========
+Whiffle
+===========
+
+Whiffle provides a wrapper around the Wikidot XML-RPC API.
+Example scripts are provided for re-parenting pages and changing tags
+in large batches.
+
+Change Log
+==========
+
+v0.1	Initial release
+v1.0	Modified for the v2 API
+
+
+Installation
+============
+
+Whiffle is a normal Python package and is held on the PyPI repository.
+It can be installed using *pip* or any other method of your choice. If
+you know what I'm talking about then you don't need me to hold your
+hand.
+
+If you are new to Python or installing packages from PyPI, then the
+easiest way to install Whiffle is manually.
+
+* Extract all the files into an empty folder.
+* From a command prompt in that folder, give the command
+    python setup.py install
+
+Using Whiffle
+=============
+
+The first thing you need to do is to configure the "identity.ini" file.
+This file must be in the current directory when an application that uses
+whiffle executes. There is a skeleton in the bin folder that you can use
+to get started.
+
+The identity.ini file
+---------------------
+
+    [default@wikidot]
+        This heading allows you to have multiple identities and sites.
+	Until you want to do two things at once, leave it alone. The
+	"@wikidot" and the brackets must be there, but you can change
+	the name ("default"). 
+    user: AWikidotUserName
+        This is the Wikidot username that has API access to the site
+    key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        This is the API key of the wikidot user
+    site: AWikidotSiteName
+        This is the Wikidot site that you are working on. It's just the
+	name, no "http" or "wikidot.com".
+
+Once you have set up the identity.ini file, look at the examples:
+addtag.py and chparent.py in the bin sub-folder of the installation
+folder. These are probably the best way to get started and may be all
+you need.
+
+addtag.py
+---------
+
+Usage: addtag.py [options] page [tag]
+Adds or removes tags from Wikidot pages.
+
+Options:
+    -h, --help
+        show this help message and exit
+	
+    -i IDENTITY, --identity=IDENTITY
+        define the name of the entry in the identity.ini file to use.
+	The default is "default".
+	
+    -r, --remove
+        remove the specified tag (default action is to add it).
+	
+    -f FILE, --file=FILE
+        define the name of the a file, each line of which
+        contains <page>SPACE<tag> or just <page>. If <tag> is
+        not specified on any line, then the one specified on
+        the command line is used. If every line specifies a
+        tag, then a tag is not required on the command line.
+
+Examples:
+* addtag.py start fred
+    adds the tag "fred" to the page "start".
+
+* addtag.py -r start fred
+    removes the tag "fred" from the page "start".
+
+* addtag.py language:python good
+    adds the tag "good" to the page "language:python"
+    
+* addtag.py -f myfile.txt defaulttag
+    assuming the file myfile.txt contains:
+        start fred
+	stop
+    adds the tag "fred" to the page "start" and adds the tag
+    "defaulttag" to the page "stop".
+    
+    Specifying the the tag on the command line is not necessary if every
+    line of the file specifies a tag.
+    
+chparent.py
+-----------
+
+Usage: chparent.py [options] parent child
+Changes the parent of a page
+
+Options:
+    -h, --help
+        show this help message and exit
+    -i IDENTITY, --identity=IDENTITY
+        define the name of the entry in the identity.ini file to use.
+        The default is "default".
+    -f FILE, --file=FILE
+        define the name of the a file, each line of which contains
+        <parent>SPACE<child>. If this option is specified then the
+        parent and child should not be given on the command line.
+
+Examples:
+
+* chparent start help
+    makes page "start" the parent of page "help"
+    
+* chparent -f myfile.txt
+    assuming the file myfile.txt contains:
+        start help
+        help help:how-to-edit
+    makes page "start" the parent of page "help" and makes page "help"
+    the parent of page "help:how-to-edit" 
+
+    
+    
+Using Whiffle in your own application
+=====================================
+
+Each program should include the following::
+    from whiffle import wikidotapi, ApiError, SemanticError
+    ...
+    api = wikidotapi.connection(identity)
+    ...
+    
+The parameter to wikidotapi.connection() is optional, and it defaults to
+"default", which is the identity used in the skeleton identity.ini file.
+
+Calls can then be made on the methods of the "api" object. See the
+example code for the syntax.
+
+page_is_valid(name)
+-------------------
+Returns True if the name is a valid page name. Validation is only aimed
+at preventing pages being created that are impossible to delete, and
+does not attempt to replicate Wikidot rules.
+
+category_is_valid(name)
+-------------------
+Returns True if the name is a valid category name. Validation is only aimed
+at preventing pages being created that are impossible to delete, and
+does not attempt to replicate Wikidot rules.
+
+site_is_valid(name)
+-------------------
+Returns True if the name is a valid page name. Validation is only basic,
+and does not attempt to replicate Wikidot rules.
+
+Site
+----
+The name of the current site. The default is that found in the
+identity.ini file. Site can be assigned to in order to work on multiple
+sites in the same application::
+    dosomething()
+    api.Site = "newsite"
+    dosomething()
+    
+Pages
+-----
+A list of page names. This list is updated the first time Pages is used
+and a cached copy is used thereafter. To refresh the cache, call
+"refresh_pages()".
+
+The content of this list is that returned by a pages.select API call. 
+
+Categories
+----------
+A list of dictionaries, each of which describe a category. This list is
+updated the first time Categories is used and a cached copy is used
+thereafter. To refresh the cache, call "refresh_categories()".
+
+The content of this list is that returned by a categories.select API
+call. 
+
+page_exists(page, category="_default")
+--------------------------------------
+Returns True if the page already exists (according to the Pages cache).
+The page name can be given either as "category:page" or the page name
+and the category can be given separately.
+
+get_page_item(page, item, category="_default")
+----------------------------------------------
+Gets a datum from the given key for the given page (from the Pages
+cache). The page name can be given either as "category:page" or the page name
+and the category can be given separately.
+
+The item parameter is a string containing the dictionary key. Valid keys
+are those returned by the page.get_one API method.
+
+set_page_item(page, item, value, create=False, category="_default")
+----------------------------------------------
+Sets the datum for given key on the given page. The page name can be
+given either as "category:page" or the page name and the category can be
+given separately.
+
+The item parameter is a string containing the dictionary key. Valid keys
+are those taken by thepages.save-one API method, and the value parameter
+must be a valid value for that entry.
+
+If the create parameter is True, then this call may create a new
+(probably blank) page. Otherwise this call will raise an exception if
+the page does not already exist (according to the Pages cache).
+
+add_tag(page, tag, category="_default", ErrorIfRedundant=True)
+--------------------------------------------------------------
+Adds the given tag to the given page. The page name can be
+given either as "category:page" or the page name and the category can be
+given separately.
+
+If the ErrorIfRedundant parameter is False, then this call will not fail
+if the page already has the given tag. Otherwise an exception will be
+raised if the tag is already on the page.
+
+remove_tag(page, tag, category="_default", ErrorIfRedundant=True)
+--------------------------------------------------------------
+Removes the given tag from the given page. The page name can be
+given either as "category:page" or the page name and the category can be
+given separately.
+
+If the ErrorIfRedundant parameter is False, then this call will not fail
+if the page does not have the given tag. Otherwise an exception will be
+raised if the tag is not on the page.
+
+server
+------
+The API server proxy. This can be used to make API calls::
+    api.server.site.categories ({"site": self.Site})
+Of course if you make calls through this object then Whiffle does not
+do any validation checks; you are on your own.
+
+ApiError
+--------
+An exception raised by the api object. Most exceptions are of this type
+except for...
+
+SemanticError
+-------------
+An exception raised by the api object due to an atempt to write to a
+read-only object.
+
+
+
+Hello World
+===========
+
+Here is the Whiffle version of Hello World::
+
+    from whiffle import wikidotapi
+    
+    api = wikidotapi.connection()
+    api.set_page_item("hello", "content", "**Hello World!**", create=True)
+
+That creates the page "hello" and puts the text "Hello World!" on it in
+bold.

@@ -1,0 +1,419 @@
+00:08:45 <Pixeltasim> .cache
+00:09:11 <Pixeltasim> .wl loaf
+00:09:23 <Pixeltasim> .tale a child
+00:09:34 <Pixeltasim> .au pixeltasim
+00:09:41 <Pixeltasim> huh
+00:10:47 <Pixeltasim> .tale ghost
+00:17:05 -!- Devereaux [~Dev@D243F27D:A409835B:5EB4EEF8:IP] has joined #scptestbot
+00:18:59 -!- thedeadlymoose [eris@wanderers.net] has joined #scptestbot
+00:21:03 -!- Devereaux_ [~Dev@D243F27D:A409835B:5EB4EEF8:IP] has joined #scptestbot
+00:32:30 <Pixeltasim> .cache
+00:32:36 <Pixeltasim> thedeadlymoose
+00:32:40 <Pixeltasim> try out the bot?
+00:33:25 <thedeadlymoose> okay
+00:33:27 <thedeadlymoose> one sec
+00:34:13 -!- Eris [Mibbit@synIRC-15EE9F61.dhcp.mtpk.ca.charter.com] has joined #scptestbot
+00:34:23 <Eris> .tell thedeadlymoose test
+00:34:27 <thedeadlymoose> test
+00:34:40 <Eris> .tell thedeadlymoose test
+00:34:40 <Eris> .tell thedeadlymoose test
+00:34:44 <Eris> .tell thedeadlymoose test2
+00:34:47 <Eris> .tell thedeadlymoose test3
+00:35:15 <thedeadlymoose> test
+00:35:30 <Eris> .tell thedeadlymoose different sentence
+00:35:48 <thedeadlymoose> huh. I never received test2/test3, is that working correctly?
+00:36:17 <Pixeltasim> use .showtells
+00:36:42 -!- Devereaux [~Dev@D243F27D:A409835B:5EB4EEF8:IP] has joined #scptestbot
+00:36:59 <thedeadlymoose> I did
+00:37:04 <thedeadlymoose> though, I don't seem to need to
+00:37:12 <Pixeltasim> .sea ghost
+00:37:20 <Pixeltasim> .tale ghost stories
+00:37:27 <Pixeltasim> SCP-2900
+00:37:34 <Pixeltasim> .author deadlymoose
+00:38:13 <Pixeltasim> most of the stuff has been sped up considerably
+00:39:37 <Devereaux> .au Devereaux
+00:40:01 <thedeadlymoose> .au DrMann
+00:40:14 <thedeadlymoose> .au DrEverrettMann
+00:40:21 <thedeadlymoose> .au DrEverettMann
+00:40:22 <CryogenChaos> .au CryogenChaos
+00:40:36 <Pixeltasim> mann has a large page so it takes some time to compile
+00:40:46 <Pixeltasim> much quicker than before though
+00:40:59 <thedeadlymoose> poor yoric's personnel page? o_o
+00:41:19 <Devereaux> Why did it pull up pooryoric's page? :P
+00:41:19 <Devereaux> Ninja'd
+00:41:19 <Devereaux> >:(
+00:41:56 <Pixeltasim> because he made it methinks
+00:42:33 <thedeadlymoose> SCP-003
+00:42:40 <thedeadlymoose> hahahahaha
+00:42:42 <thedeadlymoose> yeeeeaaaaaah
+00:42:45 * thedeadlymoose that's my SCP ;(
+00:43:04 <thedeadlymoose> we'll just have to deal with that, I think, though the author page thing is a bigger deal
+00:43:31 <thedeadlymoose> of course this is stopgap time so little flaws like this are okay
+00:43:32 <thedeadlymoose> and expected
+00:44:40 <Pixeltasim> The issue is those have to be logged individually
+00:44:54 <Pixeltasim> cuz there's nothing on the site telling cakebot that you actually wrote that
+00:45:34 * thedeadlymoose nods
+00:45:36 <thedeadlymoose> yeah
+00:45:40 <thedeadlymoose> Nala had the same problem
+00:45:42 <TwistedGears> That sounds like quite the endeavor
+00:45:49 <Pixeltasim> I could do it
+00:45:52 <thedeadlymoose> it's not as bad as it sounds
+00:45:57 <thedeadlymoose> it's also not necessary right now
+00:46:03 <thedeadlymoose> esp since this is StopGapBot
+00:46:09 <Pixeltasim> yep
+00:46:19 <TwistedGears> er... stopgapbot?
+00:47:04 <Devereaux> Is its final version going to be called cakebot? :||||
+00:48:14 <Pixeltasim> ?
+00:48:17 <Pixeltasim> I dunno
+00:48:21 <Pixeltasim> I'll take bot names now
+00:48:25 <Pixeltasim> ideas?
+00:49:00 <thedeadlymoose> It's already named
+00:49:02 <thedeadlymoose> Alexandra
+00:49:07 <Pixeltasim> kk
+00:49:26 <Pixeltasim> Also, thedeadlymoose, are you discussing this with staff?
+00:49:27 <thedeadlymoose> Though Crayne wasn't clear --- I thought he had a /separate/ prototype
+00:49:33 <Pixeltasim> he did
+00:49:40 <Pixeltasim> but he hasn't been on and I'm not sure of his progress
+00:49:49 <Pixeltasim> and he was using mostly my code
+00:49:53 <thedeadlymoose> he said it was ready to start testing but couldn't start testing yet?
+00:49:55 <thedeadlymoose> ahhhh
+00:50:02 <Pixeltasim> well to base it off of
+00:50:05 <thedeadlymoose> the trouble is, he's on late, so when I talk to him, I'm falling asleep.
+00:50:23 <thedeadlymoose> and no I haven't discussed the tells issue with staff
+00:50:48 <Pixeltasim> or just the replacement in general?
+00:50:56 <thedeadlymoose> of course, right now, I'm falling asleep anyway :P
+00:51:04 <thedeadlymoose> how do you mean?
+00:51:11 <thedeadlymoose> we've discussed it, yeah, though possibly insufficiently :/
+00:51:33 <thedeadlymoose> Ops are aware that we want to bring in CakeBot tonight if possible
+00:51:36 <Pixeltasim> like just keeping people on the same page
+00:51:38 <Pixeltasim> okay
+00:51:49 <thedeadlymoose> though
+00:51:51 <thedeadlymoose> am unsure
+00:52:09 <thedeadlymoose> it's already nighttime for most people and I never posted the warning about tells
+00:58:55 -!- Roget [~Rogay@synIRC-F3894AD0.hsd1.fl.comcast.net] has joined #scptestbot
+00:59:00 <Roget> o/
+00:59:18 <Pixeltasim> test it out I have to restart to change the name and everything
+00:59:37 <Roget> scp-2600
+00:59:50 <Roget> .sea Plastic Fantastic
+01:00:19 <Roget> .showmatches
+01:00:52 <Roget> Is the lag for everyone or is it just me
+01:01:02 <Pixeltasim> it's faster
+01:01:06 <Pixeltasim> but it's not super fast
+01:01:15 <Pixeltasim> cuz it has to make api calls
+01:01:15 <Roget> Will it be faster on its own server?
+01:01:19 <Pixeltasim> .tale plastic fantastic
+01:01:24 <Pixeltasim> roget: marginally 
+01:01:31 <Roget> Alright
+01:01:37 <Roget> .y Classic Game Room
+01:02:29 <Roget> What other commands will it do?
+01:02:35 <Roget> Does .help give a list?
+01:02:38 <Pixeltasim> .help
+01:02:41 <Pixeltasim> yeah
+01:02:42 <Roget> .help
+01:03:11 <Roget> > available commands: allah 
+01:03:22 <Roget> You probably ought to take out quotes and rem's for 19, since that'd be
+01:03:23 <Roget> uh
+01:03:25 <Roget> interesting to deal with
+01:03:33 <Pixeltasim> yep
+01:03:44 <Roget> what does allah do, just give scripture?
+01:03:49 <Pixeltasim> yeah
+01:03:53 <Pixeltasim> .allah
+01:04:04 <Roget> That's interesting
+01:04:08 <Pixeltasim> alright gonna restart
+01:04:12 <Pixeltasim> in about half an hour ish
+01:04:12 <Roget> o7
+01:04:14 <Roget> godspeed
+01:04:17 <Pixeltasim> the bot will be ready
+01:04:28 -!- Alexandra [~skybot@synIRC-8E0C1887.rcmdva.fios.verizon.net] has joined #scptestbot
+01:04:52 <Roget> A lot of these commands are ones you might want to take out of 19's hands
+01:05:12 <Roget> I can see most things beyond SCP stuff and youtube and shit being thoroughly abused
+01:05:12 <thedeadlymoose> I'm not incredibly worried
+01:05:20 <thedeadlymoose> eh
+01:05:21 <Roget> I'm not either but I'm putting it out there
+01:05:32 <thedeadlymoose> we can boot people who bot abuse, and be more clear on the guidelines for that
+01:05:42 <Roget> "hey there's potential for someone to be dumb" 
+01:05:45 <thedeadlymoose> and, uh
+01:05:45 <Pixeltasim> .rem Pixeltasim is the best
+01:05:47 <Pixeltasim> hm
+01:05:50 * Roget wins captain obvious award 2014
+01:06:00 <thedeadlymoose> [18:03]	Roget	You probably ought to take out quotes and rem's for 19
+01:06:02 <thedeadlymoose> do we have to ;)
+01:06:11 <Pixeltasim> .rem Pixeltasim is the best
+01:06:14 <thedeadlymoose> I dunno, I kinda want to keep them
+01:06:16 <Pixeltasim> huh?
+01:06:19 <Roget> thedeadlymoose, do you really
+01:06:34 <thedeadlymoose> ssssssssorta
+01:06:43 -!- Alexandra [~skybot@synIRC-8E0C1887.rcmdva.fios.verizon.net] has joined #scptestbot
+01:06:45 <thedeadlymoose> I wish we could limit it to people on the access list or something
+01:06:48 <Pixeltasim> one sec
+01:06:51 <thedeadlymoose> or... I dunno
+01:06:54 <Roget> If we could limit it then I don't care
+01:07:03 <Roget> but I see how quotes go in a small chatroom
+01:07:17 <Pixeltasim> as to limiting, once I have the ability for an infinite ban list it'd be asy
+01:07:17 <Roget> I don't want to see them in the general 19 lobby room
+01:07:33 <Pixeltasim> .quote add Pixel is awesome
+01:07:37 <Pixeltasim> .rem Pixel is awesome
+01:07:39 <Pixeltasim> yep
+01:07:41 <Pixeltasim> gone
+01:07:43 <Pixeltasim> for now
+01:08:14 -!- weitoobusy [hurf.im@a.flamingo] has joined #scptestbot
+01:08:27 <weitoobusy> yo
+01:08:59 <Pixeltasim> SCP-2900
+01:09:16 <Roget> scp-1999
+01:09:26 <Pixeltasim> scp-2904
+01:09:32 <Roget> Nice
+01:09:56 <Roget> Hopefully doesn't encourage new people to go make pages immediately, but that's an easy change if it does
+01:10:03 <Pixeltasim> scp-173-j
+01:10:06 <Roget> .unused
+01:10:11 <weitoobusy> .help
+01:10:19 <Pixeltasim> do we want an unused
+01:10:22 <Roget> Yeah
+01:10:28 <Roget> that's a pretty regularly used feature
+01:10:50 <weitoobusy> Just saying
+01:10:56 <Pixeltasim> kk
+01:11:01 <weitoobusy> Pixeltasim you are fucking awesome for making this
+01:11:15 <Roget> weitoobusy, I was tellin' him the same last night
+01:11:18 <Roget> it's the coolest thing
+01:11:21 <Pixeltasim> aw shucks guys
+01:11:24 <weitoobusy> .author weizhong
+01:11:36 <weitoobusy> Or do I do !author weizhong
+01:11:47 <Pixeltasim> it's loading weizhong
+01:11:52 <weitoobusy> Ah, okay
+01:11:56 <Pixeltasim> give it a sec you must have written a ton of pages or something
+01:12:03 <Pixeltasim> nope
+01:12:04 <Pixeltasim> forgot
+01:12:07 <Pixeltasim> the cache is updating
+01:12:08 <Pixeltasim> .cache
+01:12:11 <Pixeltasim> yeah
+01:12:31 <weitoobusy> Ahh, okay
+01:12:39 <weitoobusy> Is this hosted on your own server?
+01:12:42 <Pixeltasim> yesh
+01:12:45 <weitoobusy> Ahhh
+01:12:55 <weitoobusy> I'd imagine that it's slower than Ael's?
+01:13:05 <Pixeltasim> yeah a bit
+01:13:11 <Roget> We can toss this up on the same server Ael uses, since that one is property of moiphy
+01:13:12 <weitoobusy> Mmmh
+01:13:14 <Pixeltasim> though I could get it to comparable speeds with time
+01:13:17 <weitoobusy> What Roget said
+01:13:22 <Pixeltasim> a fair bit of time granted
+01:13:34 <Pixeltasim> apparently there is an scp.so server or something
+01:14:14 <Roget> Pixeltasim, moiphs is more reliable
+01:14:20 <Pixeltasim> roger
+01:14:20 <Roget> Although scp.sp is getting better
+01:16:17 <thedeadlymoose> actually, we're discussing a solution between Mann & Troy for a VM apparently
+01:16:34 <Roget> that stand for Virtual Machine?
+01:16:37 <Pixeltasim> I heard troy talking about it
+01:16:37 <thedeadlymoose> yes
+01:16:40 <thedeadlymoose> murphy's server is far more reliable but murphy is almost impossible to contact
+01:16:49 <Roget> that is unfortunate.
+01:16:53 <weitoobusy> Well then.
+01:17:05 <weitoobusy> .cache
+01:17:23 <weitoobusy> How often does Alexandra update?
+01:24:37 <Pixeltasim> once an hour
+01:24:40 <Pixeltasim> .cache
+01:26:17 <Pixeltasim> .unused
+01:26:26 <Pixeltasim> hm gotta wait for the cache
+01:26:30 <Pixeltasim> .cache
+01:30:41 <Pixeltasim> .cachE
+01:38:06 <Pixeltasim> .cache
+01:38:10 <Pixeltasim> almost there
+01:44:07 <Pixeltasim> .cache
+01:44:12 <Pixeltasim> thedeadlymoose roget
+01:44:14 <Pixeltasim> .unused
+01:44:31 <Roget> hi
+01:45:11 <Pixeltasim> scp-2055
+01:45:56 <Pixeltasim> .unused
+01:46:39 <Pixeltasim> .unused
+01:47:18 <Pixeltasim> .unused
+01:47:41 <Pixeltasim> .unused
+01:48:01 <Pixeltasim> .unused
+01:48:18 <Pixeltasim> .unused
+01:48:33 <Pixeltasim> hm
+01:50:23 <Pixeltasim> .unused
+01:50:58 <Pixeltasim> .unused
+01:51:14 <Pixeltasim> roget: It works
+01:51:16 <Pixeltasim> .un
+01:51:19 <Pixeltasim> .unused
+01:51:53 <Roget> huh, didn't think we had any open series 2 pages
+01:52:00 <Pixeltasim> yeah well we do
+01:52:05 <Roget> Pixeltasim, oh one thing I just remembered
+01:52:14 <Roget> does she do .errors?
+01:52:20 <Pixeltasim> ?
+01:52:32 <Pixeltasim> hm
+01:52:33 <Pixeltasim> no
+01:52:43 <Pixeltasim> but I could add it
+01:53:13 <Pixeltasim> scp-2067
+01:53:35 <Pixeltasim> I could get a list of pages without tags pretty quickly
+01:53:42 <Roget> Pixeltasim, please do, I know it's a great help in cleaning up the series list and finding untagged pages
+01:53:47 <Roget> so the tech team'll love you for it
+01:53:47 <Pixeltasim> but I might add that tomorrow I'm pretty sleepy right now
+01:53:59 <Roget> Yeah that sounds super spiffy
+01:54:09 <Pixeltasim> hard to focus
+01:54:24 <Pixeltasim> what's the plan for putting it in 19
+01:54:43 <Roget> I think that'd be moose's department but I don't know if he's got a specific outline right now
+01:54:53 <Roget> Probably once we've got hosting figured out
+01:55:01 <Roget> We'd move on to actually tossing it in
+01:55:10 <Pixeltasim> gotcha
+01:55:26 <Roget> I think he's also in a state of sleep deprivation and talking to his contest team
+01:55:29 <Roget> so he's busy
+01:55:32 <Pixeltasim> yeah makes sense
+01:55:37 <Roget> but that what I said just now is my guess for what our plan is
+01:57:03 <Pixeltasim> gotcha
+01:58:30 <weitoobusy> If you do that Pix
+01:58:31 <weitoobusy> I will love you
+01:58:35 <weitoobusy> Adding .errors that is
+01:58:42 <weitoobusy> .author weizhong
+01:58:48 <weitoobusy> Hmm
+01:58:52 <weitoobusy> Oh, there it is
+01:58:57 <Roget> .au roget
+01:59:34 <Roget> 87?
+01:59:39 <Roget> missin' 5 there bub
+02:00:24 <Pixeltasim> really?
+02:00:35 <Pixeltasim> hm
+02:00:43 <Pixeltasim> are they tagged as scp?
+02:01:09 <Pixeltasim> it really should count all of them
+02:01:37 <Roget> Oh, those might be ones that I've had overriden because of rewrites
+02:02:01 <Pixeltasim> yeah that makes sense
+02:02:09 <Pixeltasim> can't distinguish re-writes
+02:02:28 <Roget> Would it be possible for you to do overrides?
+02:02:41 <Pixeltasim> yeah
+02:03:11 <Pixeltasim> but again, that'd take some time
+02:03:17 <Pixeltasim> and probably finish with the ban list
+02:03:41 <Pixeltasim> since they'd have similar function
+02:03:59 <Roget> Radical
+02:04:00 <Roget> :D
+02:04:33 <Roget> Aelanna stopped doing them for me once I got on her shitlist, I have some others that I totally rebuilt but kept the page on
+02:04:46 <Pixeltasim> yeah I'd just make it so an op could override
+02:04:59 <Roget> right on
+02:05:48 <thedeadlymoose> Roget you shouldn't override stuff you just cleaned up pls
+02:06:16 <thedeadlymoose> Almost every case in which she argued with you about that, she was right and you were being... I don't even know
+02:06:25 <thedeadlymoose> of course in every single case in which she argued with you
+02:06:29 <thedeadlymoose> she was a total asshole
+02:06:35 <thedeadlymoose> so that didn't help in the slightest
+02:06:54 <Roget> thedeadlymoose, there was the one time with 864, which I wasn't going to ask for
+02:07:13 <thedeadlymoose> I don't remember which one that is
+02:07:17 * thedeadlymoose has forgotten specific incidents
+02:07:19 <thedeadlymoose> lol
+02:07:20 <Roget> And I'm not out to inflate my author count with cleanups, I have enough to be impressive
+02:07:22 <Roget> the washbin
+02:07:30 <Roget> the washbin that I fixed from carriontrooper
+02:07:43 <thedeadlymoose> oh I sorta remember 
+02:07:48 <thedeadlymoose> isn't that the one I actually got involved in
+02:07:55 <thedeadlymoose> I heard about others but don't really remember much
+02:08:11 <Roget> That was, yeah
+02:08:29 <thedeadlymoose> anyways I don't think you were out to inflate your author count, just not thinking :P
+02:08:45 <thedeadlymoose> the e-peen bullshit is ... no I shouldn't say it here
+02:08:47 <thedeadlymoose> PM
+02:08:52 <Roget> ok
+02:17:20 <Pixeltasim> I'm going to bed guys
+02:17:24 <Pixeltasim> keep me updated on what's going on
+02:18:27 <Roget> I can skype you, or text you if I have your number
+02:18:49 <Pixeltasim> I can give you my number
+02:18:54 <Pixeltasim> I'll be interning most of tomorrow
+02:19:56 <Roget> got it
+15:12:24 <Pixeltasim> .au thedeadlymoose
+15:12:28 <Pixeltasim> .alexa
+15:12:41 <Pixeltasim> .alexa
+15:12:50 <Pixeltasim> .cache
+15:13:00 <Pixeltasim> .sea competitive
+15:14:25 <Pixeltasim> .sea competitive
+15:14:32 <Pixeltasim> .sea ghost
+15:14:39 <Pixeltasim> .sea and
+15:15:07 <Pixeltasim> hm
+15:15:37 <Pixeltasim> .sea and
+15:16:04 <Pixeltasim> there we go
+15:55:48 -!- djkaktus [~djkaktus@AFCCEF1:BA314862:E1607A34:IP] has joined #scptestbot
+15:55:57 <djkaktus> Aha
+15:56:02 <djkaktus> So it's Alexandra?
+15:56:53 <Pixeltasim> yes
+15:56:55 <Pixeltasim> .au djkaktus
+15:57:11 <djkaktus> Huh. Ok
+15:57:19 <djkaktus> .au Pixeltasim 
+15:57:34 <Pixeltasim> .sea surf
+15:57:42 <Pixeltasim> scp-2900
+15:57:47 <Pixeltasim> .unu
+15:57:50 <djkaktus> scp-2399
+15:57:51 <Pixeltasim> .unused
+15:58:03 <Pixeltasim> .unused guess it requires an input?
+15:58:12 <djkaktus> interesting
+15:58:17 <Pixeltasim> .unused
+15:58:20 <Pixeltasim> fixed
+15:58:28 <Pixeltasim> SCP-2399
+15:58:35 <djkaktus> Hmmmm
+15:58:39 <djkaktus> Might get the title in there
+15:58:44 <djkaktus> I don't know how hard that would be
+15:59:02 <Pixeltasim> The title is weird
+15:59:08 <Pixeltasim> cuz SCP-2399 is the title
+15:59:14 <djkaktus> Oh right
+15:59:17 <Pixeltasim> you have to go to the series page and look up the title
+15:59:24 <djkaktus> you'd have to grab from the series page
+15:59:25 <Pixeltasim> which I'll add at some point
+15:59:26 <djkaktus> how strange
+15:59:39 <djkaktus> Pretty solid so far
+15:59:48 <djkaktus> does it do the otherstuff outside of the wiki?
+15:59:51 <djkaktus> .y hey ya
+15:59:56 <djkaktus> :D
+15:59:59 <Pixeltasim> yep
+16:00:05 <Pixeltasim> .tell djkaktus alexandra is the bot
+16:00:17 <djkaktus> .ch Pixeltasim, djkaktus
+16:00:21 <Pixeltasim> yeah
+16:00:22 <djkaktus> Good girl
+16:00:27 * Pixeltasim hugs alexandra
+16:00:32 <djkaktus> Very cool, very cool
+16:00:33 <Pixeltasim> alexandra sucks
+16:00:40 <djkaktus> alexandra is cool
+16:00:47 <djkaktus> nothing? WELL.
+16:00:51 <Pixeltasim> :P
+16:00:54 <djkaktus> hahahaha
+16:00:57 <Pixeltasim> those are the only two I added
+16:01:06 <Pixeltasim> and I'll prolly take em out cuz bot abuse
+16:01:17 <djkaktus> Right right
+16:01:19 <Pixeltasim> .alexandra
+16:01:21 <djkaktus> A stoic bot is best bot
+16:01:33 <Pixeltasim> that's thorn
+16:01:42 <Pixeltasim> when you hug thorn he just stand's there stoically 
+16:01:46 <djkaktus> ahahahah
+16:01:53 <djkaktus> So who does the bot hosting?
+16:01:54 <Pixeltasim> thorn = wl bot
+16:01:57 <Pixeltasim> moi at the moment
+16:02:08 <Pixeltasim> and hosting is being worked out by staff from what I can tell
+16:02:17 <djkaktus> sure sure
+16:02:20 <Pixeltasim> I host thorn too
+16:02:26 <djkaktus> that's actually really funny
+16:02:27 <Pixeltasim> my computer is basically on all the time
+16:02:28 <djkaktus> and fitting
+16:02:40 <Pixeltasim> djkaktus: bots with /personality/ :P
+16:02:45 <djkaktus> hahaha
+16:02:53 <djkaktus> Do you suffer from any performance issues?
+16:02:59 <djkaktus> running the bot all the time, that is
+16:03:04 <Pixeltasim> nope
+16:03:07 <Pixeltasim> they're pretty low impact
+16:03:11 <djkaktus> I figured
+16:03:12 <djkaktus> but wasn't sure.
+16:03:24 <Pixeltasim> maybe if everyone spammed commands all at once I might notice
+16:03:31 <Pixeltasim> like everyone in 19 at the same time
+16:03:51 <djkaktus> Yeah, sure sure.
+16:04:11 <djkaktus> So I don't know anything, but
+16:04:21 <djkaktus> this isn't the first time Ael has pulled out of the wiki, is it?
+16:04:26 <Pixeltasim> nope
+16:04:31 <Pixeltasim> but this is far less ragequity 
+16:04:33 <Pixeltasim> and much better handled 
+16:04:39 <Pixeltasim> a thousand times better handled
+16:04:40 <Pixeltasim> no drama
+16:04:47 <djkaktus> That's good. 
+16:04:56 <Pixeltasim> yep
+16:04:59 <djkaktus> I mean, all I know is what I've seen on O5
+16:05:05 <Pixeltasim> yeah
+16:05:19 <Pixeltasim> my only real interactions with her have been negative honestly
+16:05:25 <djkaktus> I mean
+16:05:27 <djkaktus> I'm the same way
+16:05:33 <djkaktus> Not necessarily a ton of interactions
+16:05:38 <djkaktus> and it's probably better that way
+16:06:05 <Pixeltasim> yeah
+16:06:39 <djkaktus> anyway. as far as I can tell, good job so far Pixeltasim
+16:06:44 <Pixeltasim> thanks
+16:06:45 <djkaktus> Obviously we're in good hands
+16:06:52 -!- djkaktus [~djkaktus@AFCCEF1:BA314862:E1607A34:IP] has left #scptestbot
+16:42:12 <Roget|Slumbers> Pixeltasim: there was a fair bit of drama with her when she made the call to leave, and some minor drama since then
+16:42:20 <Roget|Slumbers> but yeah nothing like her super ragequit 2012 edition
+18:05:21 -!- Rheumatism [~Rumetzen@synIRC-F2F11661.cable.mindspring.com] has joined #scptestbot

@@ -1,0 +1,140 @@
+12:21:44 :monster.va.us.synirc.net 001 CakeBot :Welcome to the synIRC IRC Network CakeBot!~skybot@pool-96-253-116-52.rcmdva.fios.verizon.net
+12:21:44 :monster.va.us.synirc.net 002 CakeBot :Your host is monster.va.us.synirc.net, running version Unreal3.2.9
+12:21:44 :monster.va.us.synirc.net 003 CakeBot :This server was created Sat Mar 30 2013 at 21:56:47 UTC
+12:21:44 :monster.va.us.synirc.net 004 CakeBot monster.va.us.synirc.net Unreal3.2.9 iowghraAsORTVSxNCWqBzvdHtGp lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+12:21:44 :monster.va.us.synirc.net 005 CakeBot CMDS=KNOCK,MAP,DCCALLOW,USERIP UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=40 CHANLIMIT=#:40 MAXLIST=b:60,e:60,I:60 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 :are supported by this server
+12:21:44 :monster.va.us.synirc.net 005 CakeBot MAXTARGETS=20 WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=synIRC CASEMAPPING=ascii EXTBAN=~,qjncrR ELIST=MNUCT :are supported by this server
+12:21:44 :monster.va.us.synirc.net 005 CakeBot STATUSMSG=~&@%+ EXCEPTS INVEX :are supported by this server
+12:21:44 :monster.va.us.synirc.net 251 CakeBot :There are 27 users and 6287 invisible on 17 servers
+12:21:44 :monster.va.us.synirc.net 252 CakeBot 27 :operator(s) online
+12:21:44 :monster.va.us.synirc.net 254 CakeBot 2398 :channels formed
+12:21:44 :monster.va.us.synirc.net 255 CakeBot :I have 801 clients and 0 servers
+12:21:44 :monster.va.us.synirc.net 265 CakeBot :Current Local Users: 801  Max: 975
+12:21:44 :monster.va.us.synirc.net 266 CakeBot :Current Global Users: 6314  Max: 7920
+12:21:44 :monster.va.us.synirc.net 375 CakeBot :- monster.va.us.synirc.net Message of the Day - 
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- 1/2/2014 21:52
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- This is the short MOTD. To view the complete MOTD type /motd
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- 
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- 
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                               .---. .---. 
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                              :     : o   :    me want cookie!
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                          _..-:   o :     :-.._    /
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                      .-''  '  `---' `---' "   ``-.    
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                    .'   "   '  "  .    "  . '  "  `.  
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                   :   '.---.,,.,...,.,.,.,..---.  ' ;
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                   `. " `.                     .' " .'
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                    `.  '`.                   .' ' .'
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                     `.    `-._           _.-' "  .'  .----.
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                       `. "    '"--...--"'  . ' .'  .'  o   `.
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                       .'`-._'    " .     " _.-'`. :       o  :
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                     .'      ```--.....--'''    ' `:_ o       :
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                   .'    "     '         "     "   ; `.;";";";'
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                  ;         '       "       '     . ; .' ; ; ;
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                 ;     '         '       '   "    .'      .-'
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                 '  "     "   '      "           "    _.-'
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                                                                       
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-             ######  ##    ## ##    ## #### ########   ######  
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-            ##    ##  ##  ##  ###   ##  ##  ##     ## ##    ## 
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-            ##         ####   ####  ##  ##  ##     ## ##       
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-             ######     ##    ## ## ##  ##  ########  ##       
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-                  ##    ##    ##  ####  ##  ##   ##   ##       
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-            ##    ##    ##    ##   ###  ##  ##    ##  ##    ##
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-             ######     ##    ##    ## #### ##     ##  ######  
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- 
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-          |                                                    |
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-        --+----------------------------------------------------+--
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-          |                                                    |
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-          | Welcome on monster.va.us.synirc.net                |
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-          | Available ports: 6660-6669                         |
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-          | SSL ports: 6697, 7001                              |
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-          |                                                    |
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-          | Server Admin: jon <jon@synirc.net>                 |
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-          | Co-Admin    : Jake <jake@synirc.net>               |
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-          |                                                    |
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-        --+----------------------------------------------------+--
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :-          |                                                    |
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- 
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- DISCLAIMER:
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- 
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- synIRC.net will scan your IP for open proxies upon connection to our 
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- services.  You must be 18 or older to connect and chat on our services, or 
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- have parental consent. synIRC.net and its affiliates are not responsible 
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- for any bodily or mental harm that could possibly come from using its 
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- services. synIRC.net is not responsible for any data received or sent 
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- out to our clients. By connecting, you consent to have logging of your 
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- conversations done by other clients and are also bound to the rules and 
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- regulations that can be found at http://www.synirc.net/charter/
+12:21:44 :monster.va.us.synirc.net 372 CakeBot :- 
+12:21:44 :monster.va.us.synirc.net 376 CakeBot :End of /MOTD command.
+12:21:45 :monster.va.us.synirc.net 353 CakeBot = #scptestbot :CakeBot @Pixeltasim 
+12:21:45 :monster.va.us.synirc.net 366 CakeBot #scptestbot :End of /NAMES list.
+14:51:57 :monster.va.us.synirc.net 001 CakeBot :Welcome to the synIRC IRC Network CakeBot!~skybot@pool-96-253-116-52.rcmdva.fios.verizon.net
+14:51:57 :monster.va.us.synirc.net 002 CakeBot :Your host is monster.va.us.synirc.net, running version Unreal3.2.9
+14:51:57 :monster.va.us.synirc.net 003 CakeBot :This server was created Sat Mar 30 2013 at 21:56:47 UTC
+14:51:57 :monster.va.us.synirc.net 004 CakeBot monster.va.us.synirc.net Unreal3.2.9 iowghraAsORTVSxNCWqBzvdHtGp lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+14:51:57 :monster.va.us.synirc.net 005 CakeBot CMDS=KNOCK,MAP,DCCALLOW,USERIP UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=40 CHANLIMIT=#:40 MAXLIST=b:60,e:60,I:60 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 :are supported by this server
+14:51:57 :monster.va.us.synirc.net 005 CakeBot MAXTARGETS=20 WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=synIRC CASEMAPPING=ascii EXTBAN=~,qjncrR ELIST=MNUCT :are supported by this server
+14:51:57 :monster.va.us.synirc.net 005 CakeBot STATUSMSG=~&@%+ EXCEPTS INVEX :are supported by this server
+14:51:57 :monster.va.us.synirc.net 251 CakeBot :There are 27 users and 6649 invisible on 17 servers
+14:51:57 :monster.va.us.synirc.net 252 CakeBot 27 :operator(s) online
+14:51:57 :monster.va.us.synirc.net 254 CakeBot 2451 :channels formed
+14:51:57 :monster.va.us.synirc.net 255 CakeBot :I have 850 clients and 0 servers
+14:51:57 :monster.va.us.synirc.net 265 CakeBot :Current Local Users: 850  Max: 975
+14:51:57 :monster.va.us.synirc.net 266 CakeBot :Current Global Users: 6676  Max: 7920
+14:51:57 :monster.va.us.synirc.net 375 CakeBot :- monster.va.us.synirc.net Message of the Day - 
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- 1/2/2014 21:52
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- This is the short MOTD. To view the complete MOTD type /motd
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- 
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- 
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                               .---. .---. 
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                              :     : o   :    me want cookie!
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                          _..-:   o :     :-.._    /
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                      .-''  '  `---' `---' "   ``-.    
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                    .'   "   '  "  .    "  . '  "  `.  
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                   :   '.---.,,.,...,.,.,.,..---.  ' ;
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                   `. " `.                     .' " .'
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                    `.  '`.                   .' ' .'
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                     `.    `-._           _.-' "  .'  .----.
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                       `. "    '"--...--"'  . ' .'  .'  o   `.
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                       .'`-._'    " .     " _.-'`. :       o  :
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                     .'      ```--.....--'''    ' `:_ o       :
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                   .'    "     '         "     "   ; `.;";";";'
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                  ;         '       "       '     . ; .' ; ; ;
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                 ;     '         '       '   "    .'      .-'
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                 '  "     "   '      "           "    _.-'
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                                                                       
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-             ######  ##    ## ##    ## #### ########   ######  
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-            ##    ##  ##  ##  ###   ##  ##  ##     ## ##    ## 
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-            ##         ####   ####  ##  ##  ##     ## ##       
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-             ######     ##    ## ## ##  ##  ########  ##       
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-                  ##    ##    ##  ####  ##  ##   ##   ##       
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-            ##    ##    ##    ##   ###  ##  ##    ##  ##    ##
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-             ######     ##    ##    ## #### ##     ##  ######  
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- 
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-          |                                                    |
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-        --+----------------------------------------------------+--
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-          |                                                    |
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-          | Welcome on monster.va.us.synirc.net                |
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-          | Available ports: 6660-6669                         |
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-          | SSL ports: 6697, 7001                              |
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-          |                                                    |
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-          | Server Admin: jon <jon@synirc.net>                 |
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-          | Co-Admin    : Jake <jake@synirc.net>               |
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-          |                                                    |
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-        --+----------------------------------------------------+--
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :-          |                                                    |
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- 
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- DISCLAIMER:
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- 
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- synIRC.net will scan your IP for open proxies upon connection to our 
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- services.  You must be 18 or older to connect and chat on our services, or 
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- have parental consent. synIRC.net and its affiliates are not responsible 
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- for any bodily or mental harm that could possibly come from using its 
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- services. synIRC.net is not responsible for any data received or sent 
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- out to our clients. By connecting, you consent to have logging of your 
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- conversations done by other clients and are also bound to the rules and 
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- regulations that can be found at http://www.synirc.net/charter/
+14:51:57 :monster.va.us.synirc.net 372 CakeBot :- 
+14:51:57 :monster.va.us.synirc.net 376 CakeBot :End of /MOTD command.
+14:51:58 :monster.va.us.synirc.net 353 CakeBot = #scptestbot :CakeBot @Pixeltasim 
+14:51:58 :monster.va.us.synirc.net 366 CakeBot #scptestbot :End of /NAMES list.

@@ -1,0 +1,31 @@
+{
+  "connections":
+  {
+    "local irc":
+    {
+      "server": "irc.synirc.net",
+      "nick": "Alexandra",
+      "channels": ["#scptestbot"],
+	  "nickserv_password": "F1reball"
+    }
+  },
+  "prefix": ".,!",
+  "disabled_plugins": [],
+  "disabled_commands": ["remember","quote"],
+  "acls": {},
+  "api_keys": {
+
+  },
+  "censored_strings":
+  [
+    "DCC SEND",
+    "1nj3ct",
+    "thewrestlinggame",
+    "startkeylogger",
+    "hybux",
+    "\\0",
+    "\\x01",
+    "!coz",
+    "!tell /x"
+  ]
+}
