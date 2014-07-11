@@ -5,13 +5,13 @@
     {
       "server": "irc.synirc.net",
       "nick": "Alexandra",
-      "channels": ["#scptestbot"],
+      "channels": ["#scptestbot","#site19","#site17"],
 	  "nickserv_password": "F1reball"
     }
   },
   "prefix": ".,!",
   "disabled_plugins": [],
-  "disabled_commands": ["remember","quote"],
+  "disabled_commands": [],
   "acls": {},
   "api_keys": {
 

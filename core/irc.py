@@ -138,10 +138,10 @@ class IRC(object):
         # format: [rawline, prefix, command, params,
         # nick, user, host, paramlist, msg]
         self.connect()
-		
+
 		#t = Thread(target=cache_refresh, args=())
 		#t.start()
-		
+
         thread.start_new_thread(self.parse_loop, ())
 
     def set_conf(self, conf):

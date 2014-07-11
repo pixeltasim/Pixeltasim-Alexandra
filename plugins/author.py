@@ -12,13 +12,16 @@ def author(inp):
 	taletotal = 0
 	scptotal = 0
 	pagerating = 0
-	author = "None"
+	author = inp
 	multimatch = []
 	authorpage = ""
+	found = 0
+	exact = 0
 	try:
 		for page in pages:
 			if "scp" in taglist[page] or "tale" in taglist[page]: #makes sure only articles are counted
 				if author == authorlist[page]:
+					found =1 
 					authpages.append(page)
 					pagetitle = titlelist[page]
 					pagerating = api.get_page_item(page,"rating")
@@ -29,8 +32,16 @@ def author(inp):
 						taletotal+=1
 				try:
 					if inp.lower() in authorlist[page].lower(): #this just matches the author with the first author match
-						multimatch.append(authorlist[page])
-						if author == "None":
+						if inp.lower() == authorlist[page].lower():
+							exact +=1
+						if exact == 1:
+							author = authorlist[page]
+							authpages = []
+							multimatch = [authorlist[page]]
+						elif exact < 1:
+							multimatch.append(authorlist[page])
+						if inp.lower() in authorlist[page].lower() and found == 0:
+							found = 1
 							author = authorlist[page]
 							authpages.append(page)
 							pagetitle = titlelist[page]
@@ -63,7 +74,6 @@ def author(inp):
 			if z == 0:
 				moreauthors +=1
 				plusauth.append(authors)
-
 	if moreauthors>1:
 		x = 0
 		final = "Did you mean "
@@ -78,7 +88,7 @@ def author(inp):
 			if x==3 and moreauthors ==3:
 				final += ", or  "+auth+"?"
 			if x==3 and moreauthors >3:
-				final += ", or  "+auth+"? With " + str(moreauthors) + " more authors matching your query."
+				final += ", or "+auth+"? With " + str(moreauthors) + " more authors matching your query."
 		return final
 	avgrating = 0
 	if taletotal+scptotal is not 0: #just so no division by zero

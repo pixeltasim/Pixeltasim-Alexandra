@@ -16,14 +16,14 @@ def sea(inp): #this is for WL use, easily adaptable to SCP
 	for page in titlelist: 
 		if line.lower() in page.lower(): #check for first match to input
 			if api.page_exists(page.lower()): #only api call in .tale, verification of page existence
-				if "tale" in api.get_page_item(page,"tags") or "scp" in api.get_page_item(page,"tags"): #check for tag
+				if "tale" in api.get_page_item(page,"tags") or "scp" in api.get_page_item(page,"tags") or "essay" in api.get_page_item(page,"tags"): #check for tag
 					results.append(page)
 					continue 
 			else:
 				return "Match found but page does not exist, please consult pixeltasim for error."
 		if inp.lower() in titlelist[page].lower():
 			if api.page_exists(page.lower()): #only api call in .tale, verification of page existence
-				if "tale" in api.get_page_item(page,"tags") or "scp" in api.get_page_item(page,"tags"): #check for tag
+				if "tale" in api.get_page_item(page,"tags") or "scp" in api.get_page_item(page,"tags") or "essay" in api.get_page_item(page,"tags"): #check for tag
 					results.append(page)
 	if results == []:
 		return "No matches found."

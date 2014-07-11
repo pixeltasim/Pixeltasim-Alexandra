@@ -6,12 +6,15 @@ import sys
 import traceback
 import time
 import __builtin__
+import datetime
 
 sys.path += ['plugins']  # so 'import hook' works without duplication 
 sys.path += ['lib']
 os.chdir(sys.path[0] or '.')  # do stuff relative to the install directory
 
-
+# This is a throwaway variable to deal with a python bug
+throwaway = datetime.datetime.strptime('20110101','%Y%m%d')
+  
 class Bot(object):
     def __init__(self):
         self.conns = {}
@@ -30,6 +33,7 @@ reload(init=True)
 
 
 
+
 print 'Connecting to IRC'
 
 try:
@@ -41,10 +45,12 @@ except Exception, e:
     traceback.print_exc()
     sys.exit()
 
-#wikidot stuff
-thread.start_new_thread(cache_refresh, ())  #AUTOMATIC CACHE REFRESH HERE
 
 print 'Running main loop'
+
+#wikidot stuff
+thread.start_new_thread(cache_refresh, ())  #AUTOMATIC CACHE REFRESH HERE
+thread.start_new_thread(ban_refresh, ())  #AUTOMATIC CACHE REFRESH HERE
 
 while True:
     reload()  # these functions only do things
@@ -58,4 +64,3 @@ while True:
             pass
     while all(conn.out.empty() for conn in bot.conns.itervalues()):
         time.sleep(.1)
-

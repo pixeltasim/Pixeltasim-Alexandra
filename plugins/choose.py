@@ -13,5 +13,4 @@ def choose(inp):
         c = re.findall(r'(\S+)', inp)
         if len(c) == 1:
             return 'the decision is up to you'
-
     return random.choice(c).strip()

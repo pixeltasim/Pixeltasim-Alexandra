@@ -62,7 +62,7 @@ def scpregex(match):
 			api = wikidotapi.connection() #creates API connection
 			api.Site = "scp-wiki"
 			pages = api.refresh_pages() #refresh page list provided by the API, is only a list of strings
-			page = re.sub("[ ,']",'-',match.string.lower())
+			page = re.sub("[!]",'',match.string.lower())
 			if api.page_exists(page): #only api call in .tale, verification of page existence
 				if "scp" in api.get_page_item(page,"tags"): #check for tag
 					rating = api.get_page_item(page,"rating")
@@ -134,8 +134,10 @@ def linkregex(inp):
 	pages = api.refresh_pages() #refresh page list provided by the API, is only a list of strings
 	substrings = inp.string.split()
 	for ss in substrings:
-		if "http://www.scp-wiki.net/" in ss:
+		if "http://www.scp-wiki.net/" or "http://scp-wiki.wikidot.com/" in ss :
 			page = ss[24:]
+			if page.startswith("com/"):
+				page = ss[29:]
 			if api.page_exists(page): #only api call in .tale, verification of page existence
 				rating = api.get_page_item(page,"rating")
 				if rating < 0:

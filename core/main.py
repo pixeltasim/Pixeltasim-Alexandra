@@ -1,5 +1,6 @@
 import thread
 import traceback
+import __builtin__
 from whiffle import wikidotapi
 
 thread.stack_size(1024 * 512)  # reduce vm size
@@ -46,10 +47,10 @@ class Input(dict):
 
         def ban(target=None):
             conn.cmd('MODE', [chan, '+b', target or host])
-
+			
+			
         def unban(target=None):
             conn.cmd('MODE', [chan, '-b', target or host])
-
 
         dict.__init__(self, conn=conn, raw=raw, prefix=prefix, command=command,
                       params=params, nick=nick, user=user, host=host,
@@ -173,7 +174,6 @@ def match_command(command):
 
 def main(conn, out):
     inp = Input(conn, *out)
-	
     # EVENTS
     for func, args in bot.events[inp.command] + bot.events['*']:
         dispatch(Input(conn, *out), "event", func, args)
