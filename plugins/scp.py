@@ -2,42 +2,17 @@ from whiffle import wikidotapi
 from util import hook
 import re
 import time,threading
-
-@hook.command
-def scp(inp): #this is for WL use, easily adaptable to SCP
-	".scp <Article #> -- Will return exact match of 'SCP-Article#'"
-	api = wikidotapi.connection() #creates API connection
-	api.Site = "scp-wiki"
-	pages = api.refresh_pages() #refresh page list provided by the API, is only a list of strings
-	line = re.sub("[ ,']",'-',inp) #removes spaces and apostrophes and replaces them with dashes, per wikidot's standards
-	page = "scp-"+inp.lower()
-	if api.page_exists(page): #only api call in .tale, verification of page existence
-		if "scp" in api.get_page_item(page,"tags"): #check for tag
-			rating = api.get_page_item(page,"rating")
-			if rating < 0:
-				ratesign = "-"
-			if rating >= 0:
-				ratesign = "+" #adds + or minus sign in front of rating
-			ratestring = "Rating:"+ratesign+str(rating)+"" 
-			author = api.get_page_item(page,"created_by")
-			authorstring = "Written by "+author
-			title = api.get_page_item(page,"title")
-			sepstring = ", "
-			return ""+title+" ("+ratestring+sepstring+authorstring+") - http://scp-wiki.net/"+page.lower() #returns the string, nonick:: means that the caller's nick isn't prefixed
-		else:
-			return "Page exists but is either untagged or not an scp." 
-	return "Page does not exist, but you can create it here: " + "http://scp-wiki.net/"+page
 	
 @hook.command
 def unused(inp):
-	api = wikidotapi.connection() #creates API connection
+	api = wikidotapi.connection() 
 	api.Site = "scp-wiki"
-	pages = api.refresh_pages() #refresh page list provided by the API, is only a list of strings
+	pages = api.refresh_pages()
 	scps = []
 	for page in pages:
 		try:
 			if "scp" in taglist[page]:
-				val = page[3]+page[4]+page[5]+page[6]
+				val = page 
 				scps.append(val)
 		except (KeyError,IndexError):
 			pass
@@ -55,65 +30,47 @@ def unused(inp):
 			else:
 				return "The first unused page found is SCP-"+x+" - http://www.scp-wiki.net/scp-"+x
 
-@hook.regex("SCP-")
+@hook.regex("scp-")
 def scpregex(match):
 	if ' ' not in match.string:
-		if match.string.startswith("SCP-") or match.string.startswith("!SCP-"):
-			api = wikidotapi.connection() #creates API connection
+		if match.string.lower().startswith("scp-") or match.string.lower().startswith("!scp-"):
+			api = wikidotapi.connection() 
 			api.Site = "scp-wiki"
-			pages = api.refresh_pages() #refresh page list provided by the API, is only a list of strings
+			pages = api.refresh_pages() 
 			page = re.sub("[!]",'',match.string.lower())
-			if api.page_exists(page): #only api call in .tale, verification of page existence
-				if "scp" in api.get_page_item(page,"tags"): #check for tag
-					rating = api.get_page_item(page,"rating")
+			if api.page_exists(page): 
+				if "scp" in taglist[page]: 
+					rating = ratinglist[page]
 					if rating < 0:
 						ratesign = "-"
 					if rating >= 0:
 						ratesign = "+" #adds + or minus sign in front of rating
 					ratestring = "Rating:"+ratesign+str(rating)+"" 
-					author = api.get_page_item(page,"created_by")
-					if author == None:
+					author = authorlist[page]
+					if author == "":
 						author = "unknown"
 					authorstring = "Written by "+author
-					title = api.get_page_item(page,"title")
+					if ":rewrite:" in author:
+						bothauths = authorlist[page].split(":rewrite:")
+						orgauth = bothauths[0]
+						newauth = bothauths[1]
+						authorstring = "Originally written by "+orgauth +", rewritten by "+newauth
+						if ":override:" in newauth:
+							author = newauth[10:]
+							authorstring = "Written by "+ author
+					title = titlelist[page]
 					sepstring = ", "
-					return ""+title+" ("+ratestring+sepstring+authorstring+") - http://scp-wiki.net/"+page.lower() #returns the string, nonick:: means that the caller's nick isn't prefixed
+					link = "http://scp-wiki.net/"+page.lower() 
+					return ""+title+" ("+ratestring+sepstring+authorstring+") - "+link 
 				else:
 					return "Page exists but is either untagged or not an scp." 
 			return "Page does not exist, but you can create it here: " + "http://scp-wiki.net/"+page
 		
-@hook.regex("scp-")
-def scpregexlowercase(match):
-	if ' ' not in match.string:
-		if match.string.startswith("scp-") or match.string.startswith("!scp-"):
-			api = wikidotapi.connection() #creates API connection
-			api.Site = "scp-wiki"
-			pages = api.refresh_pages() #refresh page list provided by the API, is only a list of strings
-			page = re.sub("[!]",'',match.string.lower())
-			if api.page_exists(page): #only api call in .tale, verification of page existence
-				if "scp" in api.get_page_item(page,"tags"): #check for tag
-					rating = api.get_page_item(page,"rating")
-					if rating < 0:
-						ratesign = "-"
-					if rating >= 0:
-						ratesign = "+" #adds + or minus sign in front of rating
-					ratestring = "Rating:"+ratesign+str(rating)+"" 
-					author = api.get_page_item(page,"created_by")
-					if author == None:
-						author = "unknown"
-					authorstring = "Written by "+author
-					title = api.get_page_item(page,"title")
-					sepstring = ", "
-					return ""+title+" ("+ratestring+sepstring+authorstring+") - http://scp-wiki.net/"+page.lower() #returns the string, nonick:: means that the caller's nick isn't prefixed
-				else:
-					return "Page exists but is either untagged or not an scp." 
-			return "Page does not exist, but you can create it here: " + "http://scp-wiki.net/"+page
-
 @hook.command
 def untagged(inp):
-	api = wikidotapi.connection() #creates API connection
+	api = wikidotapi.connection() 
 	api.Site = "scp-wiki"
-	pages = api.refresh_pages() #refresh page list provided by the API, is only a list of strings
+	pages = api.refresh_pages() 
 	final = "The following pages are untagged: "
 	first = 1
 	for page in pages:
@@ -129,24 +86,34 @@ def untagged(inp):
 	
 @hook.regex("http://www.scp-wiki.net/")
 def linkregex(inp):
-	api = wikidotapi.connection() #creates API connection
+	api = wikidotapi.connection() 
 	api.Site = "scp-wiki"
-	pages = api.refresh_pages() #refresh page list provided by the API, is only a list of strings
+	pages = api.refresh_pages() 
 	substrings = inp.string.split()
 	for ss in substrings:
-		if "http://www.scp-wiki.net/" or "http://scp-wiki.wikidot.com/" in ss :
+		if "http://www.scp-wiki.net/"in ss :
 			page = ss[24:]
 			if page.startswith("com/"):
 				page = ss[29:]
-			if api.page_exists(page): #only api call in .tale, verification of page existence
-				rating = api.get_page_item(page,"rating")
+			if api.page_exists(page): 
+				rating = ratinglist[page]
 				if rating < 0:
 					ratesign = "-"
 				if rating >= 0:
-					ratesign = "+" #adds + or minus sign in front of rating
+					ratesign = "+" 
 				ratestring = "Rating:"+ratesign+str(rating)+"" 
-				author = api.get_page_item(page,"created_by")
+				author = authorlist[page]
 				authorstring = "Written by "+author
-				title = api.get_page_item(page,"title")
+				if ":rewrite:" in author:
+						bothauths = authorlist[page].split(":rewrite:")
+						orgauth = bothauths[0]
+						newauth = bothauths[1]
+						authorstring = "Originally written by "+orgauth +", rewritten by "+newauth
+						if ":override:" in newauth:
+							author = newauth[10:]
+							authorstring = "Written by "+ author
+				if author == "":
+					author = "unknown"
+				title = titlelist[page]
 				sepstring = ", "
 				return ""+title+" ("+ratestring+sepstring+authorstring+") - http://scp-wiki.net/"+page.lower() #returns the string, nonick:: means that the caller's nick isn't prefixed

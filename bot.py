@@ -50,7 +50,7 @@ print 'Running main loop'
 
 #wikidot stuff
 thread.start_new_thread(cache_refresh, ())  #AUTOMATIC CACHE REFRESH HERE
-thread.start_new_thread(ban_refresh, ())  #AUTOMATIC CACHE REFRESH HERE
+#thread.start_new_thread(ban_refresh, ())  #AUTOMATIC CACHE REFRESH HERE
 
 while True:
     reload()  # these functions only do things
