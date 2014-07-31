@@ -17,14 +17,25 @@ def author(inp):
 	authorpage = ""
 	found = 0
 	exact = 0
+	rewrite =0
+	orgauth = ""
+	newauth = ""
+	rewriteauthor =0
 	try:
 		for page in pages:
 			if "scp" in taglist[page] or "tale" in taglist[page]: #makes sure only articles are counted
-				if author == authorlist[page]:
+				if ":rewrite:" in authorlist[page]: 
+					bothauths = authorlist[page].split(":rewrite:")
+					orgauth = bothauths[0]
+					newauth = bothauths[1]
+					if author == newauth: 
+						rewriteauthor = 1
+				if author == authorlist[page] or rewriteauthor ==1:
 					found =1 
+					rewriteauthor = 0
 					authpages.append(page)
 					pagetitle = titlelist[page]
-					pagerating = api.get_page_item(page,"rating")
+					pagerating = ratinglist[page]
 					totalrating = totalrating + pagerating
 					if "scp" in taglist[page]:
 						scptotal +=1
@@ -41,11 +52,20 @@ def author(inp):
 						elif exact < 1:
 							multimatch.append(authorlist[page])
 						if inp.lower() in authorlist[page].lower() and found == 0:
-							found = 1
 							author = authorlist[page]
+							if ":rewrite:" in authorlist[page]:
+								bothauths = authorlist[page].split(":rewrite:")
+								orgauth = bothauths[0]
+								newauth = bothauths[1]
+								if inp.lower() in orgauth.lower():
+									author = orgauth
+								if inp.lower() in newauth.lower():
+									author = newauth 
+								rewrite = 1
+							found = 1
 							authpages.append(page)
 							pagetitle = titlelist[page]
-							pagerating = api.get_page_item(page,"rating")
+							pagerating = ratinglist[page] 
 							totalrating = totalrating + pagerating
 							if "scp" in taglist[page]:
 								scptotal +=1
@@ -55,11 +75,14 @@ def author(inp):
 					pass
 			else:
 				if "author" in taglist[page]:
+					if ":rewrite:" in authorlist[page]:
+						bothauths = authorlist[page].split(":rewrite:")
+						orgauth = bothauths[0]
+						newauth = bothauths[1]
+						if newauth == author:
+							authorpage = "http://scp-wiki.net/"+page+" - "
 					if author == authorlist[page]:
 						authorpage = "http://scp-wiki.net/"+page+" - "
-						if author == "DrEverettMann": #hardcode because yes
-							authorpage = "http://www.scp-wiki.net/dr-manns-personnel-file - "
-
 	except KeyError:
 		pass
 	plusauth = []
@@ -67,6 +90,8 @@ def author(inp):
 	plusauth.append(author)
 	for authors in multimatch: #checks to see if multiple authors found 
 		z =0 
+		if ":rewrite:" in authors:
+			continue 
 		for foundauthor in plusauth:
 			if foundauthor ==authors:
 				z =1

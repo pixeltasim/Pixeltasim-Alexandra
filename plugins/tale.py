@@ -13,21 +13,22 @@ def tale(inp): #this is for WL use, easily adaptable to SCP
 	for page in pages: 
 		if line.lower() in page.lower(): #check for first match to input
 			if api.page_exists(page.lower()): #only api call in .tale, verification of page existence
-				if "tale" in api.get_page_item(page,"tags"): #check for tag
-					rating = api.get_page_item(page,"rating")
-					if rating < 0:
-						ratesign = "-"
+				if "tale" in taglist[page]: #check for tag
+					rating = ratinglist[page] 
+					ratesign = ""
 					if rating >= 0:
 						ratesign = "+" #adds + or minus sign in front of rating
 					ratestring = "Rating:"+ratesign+str(rating)+"" 
-					author = api.get_page_item(page,"created_by")
+					author = authorlist[page]
 					authorstring = "Written by "+author
-					title = api.get_page_item(page,"title")
+					if ":rewrite:" in author:
+						bothauths = authorlist[page].split(":rewrite:")
+						orgauth = bothauths[0]
+						newauth = bothauths[1]
+						authorstring = "Originally written by "+orgauth +", rewritten by "+newauth
+					title = titlelist[page]
 					sepstring = ", "
 					return ""+title+" ("+ratestring+sepstring+authorstring+") - http://scp-wiki.net/"+page.lower() #returns the string, nonick:: means that the caller's nick isn't prefixed
-				else:
-					print page
-					return "Page was found but it is either untagged or an administrative page."
 			else:
 				return "Match found but page does not exist, please consult pixeltasim for error."
 	return "Page not found"

@@ -8,9 +8,9 @@ import time,threading
 def lastcreated(inp):
 	api = wikidotapi.connection() #creates API connection
 	api.Site = "scp-wiki"
-	pages = api.Pages #refresh page list provided by the API, is only a list of strings
+	pages = api.refresh_pages() 
 	final = ""
-	final+=""+titlelist[pages[-1]]+"(Rating:"+str(ratinglist[pages[-1]])+") - http://www.scp-wiki.net/"+pages[-1]+" - "
-	final+=""+titlelist[pages[-2]]+"(Rating:"+str(ratinglist[pages[-2]])+") - http://www.scp-wiki.net/"+pages[-2]+" - "
-	final+=""+titlelist[pages[-3]]+"(Rating:"+str(ratinglist[pages[-3]])+") - http://www.scp-wiki.net/"+pages[-3]
+	final+=""+api.get_page_item(pages[-1],"title")+"(Rating:"+str(api.get_page_item(pages[-1],"rating"))+") - http://www.scp-wiki.net/"+pages[-1]+" - "
+	final+=""+api.get_page_item(pages[-2],"title")+"(Rating:"+str(api.get_page_item(pages[-2],"rating"))+") - http://www.scp-wiki.net/"+pages[-2]+" - "
+	final+=""+api.get_page_item(pages[-3],"title")+"(Rating:"+str(api.get_page_item(pages[-3],"rating"))+") - http://www.scp-wiki.net/"+pages[-3]
 	return  final

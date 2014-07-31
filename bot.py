@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import os
 import Queue
 import sys
@@ -32,7 +30,7 @@ eval(compile(open(os.path.join('core', 'reload.py'), 'U').read(),
 reload(init=True)
 
 
-
+thread.start_new_thread(cache_refresh, ()) 
 
 print 'Connecting to IRC'
 
@@ -46,21 +44,18 @@ except Exception, e:
     sys.exit()
 
 
+
 print 'Running main loop'
 
-#wikidot stuff
-thread.start_new_thread(cache_refresh, ())  #AUTOMATIC CACHE REFRESH HERE
-thread.start_new_thread(ban_refresh, ())  #AUTOMATIC CACHE REFRESH HERE
 
 while True:
-    reload()  # these functions only do things
-    config()  # if changes have occured
-
-    for conn in bot.conns.itervalues():
-        try:
-            out = conn.out.get_nowait()
-            main(conn, out)
-        except Queue.Empty:
-            pass
-    while all(conn.out.empty() for conn in bot.conns.itervalues()):
-        time.sleep(.1)
+	reload()# these functions only do things
+	config()# if changes have occured
+	for conn in bot.conns.itervalues():
+		try:
+			out = conn.out.get_nowait()
+			main(conn, out)
+		except Queue.Empty:
+			pass
+	while all(conn.out.empty() for conn in bot.conns.itervalues()):
+		time.sleep(.1)
