@@ -210,10 +210,17 @@ def main(conn, out):
 
         # REGEXES
         for func, args in bot.plugs['regex']:
-            m = args['re'].search(inp.lastparam.lower())
+            m = args['re'].search(inp.lastparam)
+            dispatched = 0
             if m:
                 input = Input(conn, *out)
                 input.inp = m
-
+                dispatched =1 
                 dispatch(input, "regex", func, args)
+            if dispatched == 0:
+                m = args['re'].search(inp.lastparam.lower())
+                if m:
+                    input = Input(conn, *out)
+                    input.inp = m
+                    dispatch(input, "regex", func, args)
 

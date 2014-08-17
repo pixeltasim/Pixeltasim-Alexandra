@@ -13,14 +13,9 @@ def tale(inp): #this is for WL use, easily adaptable to SCP
 	for page in pages: 
 		if line.lower() in page.lower(): #check for first match to input
 			if api.page_exists(page.lower()): #only api call in .tale, verification of page existence
-				if "tale" in taglist[page]: #check for tag
+				if "tale" in taglist[page] or "goi-format" in taglist[page]: #check for tag
 					rating = ratinglist[page] 
-<<<<<<< HEAD
 					ratesign = ""
-=======
-					if rating < 0:
-						ratesign = "-"
->>>>>>> origin/master
 					if rating >= 0:
 						ratesign = "+" #adds + or minus sign in front of rating
 					ratestring = "Rating:"+ratesign+str(rating)+"" 
@@ -31,7 +26,6 @@ def tale(inp): #this is for WL use, easily adaptable to SCP
 						orgauth = bothauths[0]
 						newauth = bothauths[1]
 						authorstring = "Originally written by "+orgauth +", rewritten by "+newauth
-<<<<<<< HEAD
 					title = titlelist[page]
 					sepstring = ", "
 					return ""+title+" ("+ratestring+sepstring+authorstring+") - http://scp-wiki.net/"+page.lower() #returns the string, nonick:: means that the caller's nick isn't prefixed
@@ -39,7 +33,7 @@ def tale(inp): #this is for WL use, easily adaptable to SCP
 				return "Match found but page does not exist, please consult pixeltasim for error."
 		if inp.lower() in titlelist[page].lower(): #check for first match to input
 			if api.page_exists(page.lower()): #only api call in .tale, verification of page existence
-				if "tale" in taglist[page]: #check for tag
+				if "tale" in taglist[page] or "goi-format" in taglist[page]: #check for tag
 					rating = ratinglist[page] 
 					ratesign = ""
 					if rating >= 0:
@@ -52,11 +46,6 @@ def tale(inp): #this is for WL use, easily adaptable to SCP
 						orgauth = bothauths[0]
 						newauth = bothauths[1]
 						authorstring = "Originally written by "+orgauth +", rewritten by "+newauth
-=======
-						if ":override:" in newauth:
-							author = newauth[10:]
-							authorstring = "Written by "+ author
->>>>>>> origin/master
 					title = titlelist[page]
 					sepstring = ", "
 					return ""+title+" ("+ratestring+sepstring+authorstring+") - http://scp-wiki.net/"+page.lower() #returns the string, nonick:: means that the caller's nick isn't prefixed

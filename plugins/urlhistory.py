@@ -56,12 +56,9 @@ def format_reply(history):
     if len(dict(history)) == 1:
         last = "last linked %s ago" % last_time
     else:
-        last = "last linked by %s %s ago " % (last_nick, last_time)
-	randval = random.randint(0,2)
-	if randval == 0:
-		last +="you unoriginal ape."
-
-    return "that url has been posted %s in the past %s by %s (%s)." % (ordinal,
+        last = "last linked by %s %s ago " % (last_nick, last_time)	
+    if hour_span <3:
+		return "that url has been posted %s in the past %s by %s (%s)." % (ordinal,
                                                                        hour_span, nicklist(history), last)
 
 

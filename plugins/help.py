@@ -13,7 +13,7 @@ def help(inp, bot=None, pm=None):
     for command, (func, args) in bot.commands.iteritems():
         fn = re.match(r'^plugins.(.+).py$', func._filename)
         if fn.group(1).lower() not in disabled:
-            if command not in disabled_comm or command != "say00101010":
+            if command not in disabled_comm or command != "say00101010" or command != "ignore00101010":
                 if func.__doc__ is not None:
                     if func in funcs:
                         if len(funcs[func]) < len(command):

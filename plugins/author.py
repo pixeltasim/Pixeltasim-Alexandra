@@ -22,10 +22,6 @@ def author(inp,nick = None):
 	orgauth = ""
 	newauth = ""
 	rewriteauthor =0
-<<<<<<< HEAD
-=======
-	overrideauth = 0
->>>>>>> origin/master
 	try:
 		for page in pages:
 			if "scp" in taglist[page] or "tale" in taglist[page]: #makes sure only articles are counted
@@ -35,12 +31,6 @@ def author(inp,nick = None):
 					newauth = bothauths[1]
 					if author == newauth: 
 						rewriteauthor = 1
-<<<<<<< HEAD
-=======
-					if overrideauth != 1:
-						if author == orgauth:
-							rewriteauthor =1 
->>>>>>> origin/master
 				if author == authorlist[page] or rewriteauthor ==1:
 					found =1 
 					rewriteauthor = 0
@@ -68,17 +58,8 @@ def author(inp,nick = None):
 								bothauths = authorlist[page].split(":rewrite:")
 								orgauth = bothauths[0]
 								newauth = bothauths[1]
-<<<<<<< HEAD
 								if inp.lower() in orgauth.lower():
 									author = orgauth
-=======
-								if ":override:" in newauth:
-									newauth = newauth[10:]
-									overrideauth = 1
-								if overrideauth !=1:
-									if inp.lower() in orgauth.lower():
-										author = orgauth
->>>>>>> origin/master
 								if inp.lower() in newauth.lower():
 									author = newauth 
 								rewrite = 1
@@ -99,12 +80,6 @@ def author(inp,nick = None):
 						bothauths = authorlist[page].split(":rewrite:")
 						orgauth = bothauths[0]
 						newauth = bothauths[1]
-<<<<<<< HEAD
-=======
-						if ":override:" in newauth:
-							newauth = newauth[10:]
-							authorstring = "Written by "+ author
->>>>>>> origin/master
 						if newauth == author:
 							authorpage = "http://scp-wiki.net/"+page+" - "
 					if author == authorlist[page]:
@@ -140,28 +115,13 @@ def author(inp,nick = None):
 				final += ", or "+auth+"?"
 			if x==3 and moreauthors >3:
 				final += ", or "+auth+"? With " + str(moreauthors) + " more authors matching your query."
-		randval = random.randint(0,5)
-		if randval == 1:
-			final += " So be more specific, jerk. >:|"
-		if randval == 2:
-			final += " Hey "+nick+"! Know what you want!"
 		return final
 	avgrating = 0
 	if taletotal+scptotal is not 0: #just so no division by zero
 		avgrating = totalrating/(taletotal+scptotal)
 	if not authpages: #if no author pages are added 
-		randint = random.randint(0,8)
-		if randint ==0:
-			return "Maybe you should take some time to remember their name, because I didn't find anything."
-		if randint == 1:
-			return "I got nothing buddy."
 		return "Author not found."
 	final = authorpage+""+author +" has written " + str(scptotal) + " SCPs and "+str(taletotal)+" tales. They have " + str(totalrating)+ " net upvotes with an average rating of " + str(avgrating) + ". Their most recent article is " + pagetitle + "(Rating:" + str(pagerating) + ")"
-	randint = random.randint(0,7)
-	if randint==2:
-		final = authorpage+"buttlord("+author +") has written " + str(scptotal) + " SCPs and "+str(taletotal)+" tales. They have " + str(totalrating)+ " net upvotes with an average rating of " + str(avgrating) + ". Their most recent article is " + pagetitle + "(Rating:" + str(pagerating) + ")"
-	if randint==1:
-		final += " They're also a "+random.choice(["jerk","goofball","butt"])
 	if author == "Pixeltasim":
 		tempauth = random.choice(["Botlord","Cool Guy Numero Uno","Pixeltasim","Bestest guy ever","Why don't you love him?","Pixelspasm"])
 		return authorpage+""+tempauth+" has written " + str(scptotal) + " SCPs and "+str(taletotal)+" tales. They have " + str(totalrating)+ " net upvotes with an average rating of " + str(avgrating) + ". Their most recent article is " + pagetitle + "(Rating:" + str(pagerating) + ")"
