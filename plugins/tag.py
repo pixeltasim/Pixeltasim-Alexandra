@@ -141,26 +141,29 @@ def get_nicks_by_tagset(db, chan, tagset):
 
 
 @hook.command
-def tag(inp, chan='', db=None):
-    '.tag <nick> <tag> -- marks <nick> as <tag> {related: .untag, .tags, .tagged, .is}'
+def tag(inp, chan='', db=None, nick = None):
+	goldusers = ["Pixeltasim","CryogenChaos","ProcyonLotor"]
+	for users in goldusers:
+		if nick.lower() ==users.lower():
+			return "http://www.scp-wiki.net/system:page-tags/tag/"+inp+"#pages"
+	return "This feature is only available to Alexandra Gold+ Pro Edition Users."
+    #db.execute('create table if not exists tag(chan, subject, nick)')
 
-    db.execute('create table if not exists tag(chan, subject, nick)')
+    #add = re.match(r'(\S+) (.+)', inp)
 
-    add = re.match(r'(\S+) (.+)', inp)
-
-    if add:
-        nick, subject = add.groups()
-        if nick.lower() == 'list':
-            return 'tag syntax has changed. try .tags or .tagged instead'
-        elif nick.lower() == 'del':
-            return 'tag syntax has changed. try ".untag %s" instead' % subject
-        return add_tag(db, chan, sanitize(nick), sanitize(subject))
-    else:
-        tags = get_tags_by_nick(db, chan, inp)
-        if tags:
-            return tags
-        else:
-            return tag.__doc__
+    #if add:
+    #    nick, subject = add.groups()
+    #    if nick.lower() == 'list':
+    #        return 'tag syntax has changed. try .tags or .tagged instead'
+    #    elif nick.lower() == 'del':
+    #        return 'tag syntax has changed. try ".untag %s" instead' % subject
+    #    return add_tag(db, chan, sanitize(nick), sanitize(subject))
+    #else:
+    #    tags = get_tags_by_nick(db, chan, inp)
+    #    if tags:
+    #        return tags
+    #    else:
+    #        return tag.__doc__
 
 
 @hook.command

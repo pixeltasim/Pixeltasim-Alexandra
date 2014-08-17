@@ -1,8 +1,9 @@
 from whiffle import wikidotapi
 from util import hook
+import random 
 
 @hook.command
-def author(inp):
+def author(inp,nick = None):
 	".author <Author Name> -- Will return details regarding the author"
 	api = wikidotapi.connection()
 	api.Site = "scp-wiki"
@@ -111,14 +112,32 @@ def author(inp):
 			if x==2 and moreauthors >2:
 				final+=", "+auth+""
 			if x==3 and moreauthors ==3:
-				final += ", or  "+auth+"?"
+				final += ", or "+auth+"?"
 			if x==3 and moreauthors >3:
 				final += ", or "+auth+"? With " + str(moreauthors) + " more authors matching your query."
+		randval = random.randint(0,5)
+		if randval == 1:
+			final += " So be more specific, jerk. >:|"
+		if randval == 2:
+			final += " Hey "+nick+"! Know what you want!"
 		return final
 	avgrating = 0
 	if taletotal+scptotal is not 0: #just so no division by zero
 		avgrating = totalrating/(taletotal+scptotal)
 	if not authpages: #if no author pages are added 
+		randint = random.randint(0,8)
+		if randint ==0:
+			return "Maybe you should take some time to remember their name, because I didn't find anything."
+		if randint == 1:
+			return "I got nothing buddy."
 		return "Author not found."
-	
-	return authorpage+""+author +" has written " + str(scptotal) + " SCPs and "+str(taletotal)+" tales. They have " + str(totalrating)+ " net upvotes with an average rating of " + str(avgrating) + ". Their most recent article is " + pagetitle + "(Rating:" + str(pagerating) + ")"#+"- http://scp-wiki.net/" + authpages[-1].lower()
+	final = authorpage+""+author +" has written " + str(scptotal) + " SCPs and "+str(taletotal)+" tales. They have " + str(totalrating)+ " net upvotes with an average rating of " + str(avgrating) + ". Their most recent article is " + pagetitle + "(Rating:" + str(pagerating) + ")"
+	randint = random.randint(0,7)
+	if randint==2:
+		final = authorpage+"buttlord("+author +") has written " + str(scptotal) + " SCPs and "+str(taletotal)+" tales. They have " + str(totalrating)+ " net upvotes with an average rating of " + str(avgrating) + ". Their most recent article is " + pagetitle + "(Rating:" + str(pagerating) + ")"
+	if randint==1:
+		final += " They're also a "+random.choice(["jerk","goofball","butt"])
+	if author == "Pixeltasim":
+		tempauth = random.choice(["Botlord","Cool Guy Numero Uno","Pixeltasim","Bestest guy ever","Why don't you love him?","Pixelspasm"])
+		return authorpage+""+tempauth+" has written " + str(scptotal) + " SCPs and "+str(taletotal)+" tales. They have " + str(totalrating)+ " net upvotes with an average rating of " + str(avgrating) + ". Their most recent article is " + pagetitle + "(Rating:" + str(pagerating) + ")"
+	return final

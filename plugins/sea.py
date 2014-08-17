@@ -4,6 +4,7 @@ import re
 import time,threading
 import thread
 import __builtin__
+import random
 
 def return_final(page):
 		title = titlelist[page]
@@ -93,5 +94,16 @@ def showmore(inp):
 	if val>maxval:
 		final += ", With " + str(val-maxval) + " more matches."
 	if final == "":
+		randval = random.randint(0,4)
+		if randval ==0:
+			return "There are no more matches to show, so don't ask, jerk."
+		if randval ==1:
+			return "Can't you read? There aren't any more matches."
 		return "There are no more matches to show."
+	randval = random.randint(0,4)
+	if randval ==0:
+		final += "I'm only doing this because I have to."
+	if randval ==1:
+		final += "I don't /see/ anything. Get it?"
+	return "There are no more matches to show."
 	return final 

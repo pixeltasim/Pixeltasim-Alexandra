@@ -4,8 +4,8 @@
     "local irc":
     {
       "server": "irc.synirc.net",
-      "nick": "Alexandra",
-      "channels": ["#scptestbot","#site19","#site17"],
+      "nick": "CakeBot",
+      "channels": ["#scptestbot"],
 	  "nickserv_password": "F1reball"
     }
   },

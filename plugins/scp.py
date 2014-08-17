@@ -2,7 +2,8 @@ from whiffle import wikidotapi
 from util import hook
 import re
 import time,threading
-	
+import random 
+
 @hook.command
 def unused(inp):
 	api = wikidotapi.connection() 
@@ -52,6 +53,9 @@ def scpregex(match):
 					if author == "":
 						author = "unknown"
 					authorstring = "Written by "+author
+					randint = random.randint(0,10)
+					if randint ==0:
+						authorstring = "Written by some weirdo who doesn't warrant mentioning"
 					if ":rewrite:" in author:
 						bothauths = authorlist[page].split(":rewrite:")
 						orgauth = bothauths[0]
@@ -63,6 +67,9 @@ def scpregex(match):
 					link = "http://scp-wiki.net/"+page.lower() 
 					return ""+title+" ("+scptitle+sepstring+authorstring+sepstring+ratestring+") - "+link 
 				else:
+					randint = random.randint(0,5)
+					if randint ==0:
+						return "Page exists but is either not tagged as scp or is not in the current cache. So go do something for once."  
 					return "Page exists but is either not tagged as scp or is not in the current cache." 
 			return "Page does not exist, but you can create it here: " + "http://scp-wiki.net/"+page
 	else:
@@ -84,6 +91,9 @@ def scpregex(match):
 						if author == "":
 							author = "unknown"
 						authorstring = "Written by "+author
+						randint = random.randint(0,10)
+						if randint ==0:
+							authorstring = "Written by some weirdo who doesn't warrant mentioning"
 						if ":rewrite:" in author:
 							bothauths = authorlist[page].split(":rewrite:")
 							orgauth = bothauths[0]
@@ -141,6 +151,9 @@ def linkregex(inp):
 				ratestring = "Rating:"+ratesign+str(rating)+"" 
 				author = authorlist[page]
 				authorstring = "Written by "+author
+				randint = random.randint(0,10)
+				if randint ==0:
+					authorstring = "Written by some goofball who doesn't warrant mentioning"
 				if ":rewrite:" in author:
 						bothauths = authorlist[page].split(":rewrite:")
 						orgauth = bothauths[0]

@@ -10,8 +10,8 @@ def hug(match):
 	__builtin__.hugs +=1
 	if hugs > 5:
 		return "That's enough hugs."
-	if hugs > 30:
-		return "That's enough hugs dick."
+	if hugs > 10:
+		return "That's enough hugs. Blacklisted."
 	val = random.randint(0,2)
 	if val == 0:
 		return "nonick::Thank you."
@@ -37,3 +37,8 @@ def draft(match, nick = None):
 @hook.regex("i have a draft")
 def draft2(match, nick = None):
 	return "nonick::"+nick+" has a draft guys!"
+		
+@hook.command()
+def say00101010(inp,conn= None, nick = None, chan = None ):
+	if nick =="Pixeltasim" and chan == nick:
+		conn.msg("#site19", inp)
