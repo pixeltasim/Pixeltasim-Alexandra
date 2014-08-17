@@ -35,7 +35,11 @@ def sea(inp): #this is for WL use, easily adaptable to SCP
 	for page in titlelist: 
 		if line.lower() in page.lower(): #check for first match to input
 			if api.page_exists(page.lower()): 
+<<<<<<< HEAD
 				if "tale" in taglist[page] or "scp" in taglist[page] or "essay" in taglist[page]or "hub" in taglist[page]: #check for tag
+=======
+				if "tale" in taglist[page] or "scp" in taglist[page] or "essay" in taglist[page]: #check for tag
+>>>>>>> origin/master
 					results.append(page)
 					continue 
 			else:
@@ -43,7 +47,11 @@ def sea(inp): #this is for WL use, easily adaptable to SCP
 				print page
 		if inp.lower() in titlelist[page].lower():
 			if api.page_exists(page.lower()):
+<<<<<<< HEAD
 				if "tale" in taglist[page] or "scp" in taglist[page] or "essay" in taglist[page]or "hub" in taglist[page]: #check for tag
+=======
+				if "tale" in taglist[page] or "scp" in taglist[page] or "essay" in taglist[page]: #check for tag
+>>>>>>> origin/master
 					results.append(page)
 		try:
 			if scptitles[page]:
@@ -60,14 +68,30 @@ def sea(inp): #this is for WL use, easily adaptable to SCP
 	for result in results:
 		third+=1
 		if third == 1:
+<<<<<<< HEAD
 			final+= return_final(result)
 		if third<=3 and third != 1:
 			final += ", "+return_final(result)
+=======
+			title = titlelist[result]
+			rating = ratinglist[result]
+			final+= ""+title+""+"(Rating:"+str(rating)+")"
+		if third<=3 and third != 1:
+			title = titlelist[result]
+			rating = ratinglist[result]
+			final+= ", "+title+""+"(Rating:"+str(rating)+")"
+>>>>>>> origin/master
 	if third>3:
 		final += ", With " + str(third-3) + " more matches."
 	if third==1:
 		page = results[0]
+<<<<<<< HEAD
 		final = return_final(page)+" - http://www.scp-wiki.net/"+page
+=======
+		title = titlelist[page]
+		rating = ratinglist[result]
+		final = ""+title+""+"(Rating:"+str(rating)+") - http://www.scp-wiki.net/"+page
+>>>>>>> origin/master
 	__builtin__.seaiter = 1
 	__builtin__.searesults = results
 	return final
@@ -88,9 +112,19 @@ def showmore(inp):
 	for result in searesults:
 		val+=1
 		if val == minval:
+<<<<<<< HEAD
 			final+= return_final(result)
 		if val<=maxval and val != minval and val>minval:
 			final+= ", "+return_final(result)
+=======
+			title = titlelist[result]
+			rating = ratinglist[result]
+			final+= ""+title+""+"(Rating:"+str(rating)+")"
+		if val<=maxval and val != minval and val>minval:
+			title = titlelist[result]
+			rating = ratinglist[result]
+			final+= ", "+title+""+"(Rating:"+str(rating)+")"
+>>>>>>> origin/master
 	if val>maxval:
 		final += ", With " + str(val-maxval) + " more matches."
 	if final == "":

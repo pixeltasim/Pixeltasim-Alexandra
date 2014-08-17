@@ -22,6 +22,10 @@ def author(inp,nick = None):
 	orgauth = ""
 	newauth = ""
 	rewriteauthor =0
+<<<<<<< HEAD
+=======
+	overrideauth = 0
+>>>>>>> origin/master
 	try:
 		for page in pages:
 			if "scp" in taglist[page] or "tale" in taglist[page]: #makes sure only articles are counted
@@ -31,6 +35,12 @@ def author(inp,nick = None):
 					newauth = bothauths[1]
 					if author == newauth: 
 						rewriteauthor = 1
+<<<<<<< HEAD
+=======
+					if overrideauth != 1:
+						if author == orgauth:
+							rewriteauthor =1 
+>>>>>>> origin/master
 				if author == authorlist[page] or rewriteauthor ==1:
 					found =1 
 					rewriteauthor = 0
@@ -58,8 +68,17 @@ def author(inp,nick = None):
 								bothauths = authorlist[page].split(":rewrite:")
 								orgauth = bothauths[0]
 								newauth = bothauths[1]
+<<<<<<< HEAD
 								if inp.lower() in orgauth.lower():
 									author = orgauth
+=======
+								if ":override:" in newauth:
+									newauth = newauth[10:]
+									overrideauth = 1
+								if overrideauth !=1:
+									if inp.lower() in orgauth.lower():
+										author = orgauth
+>>>>>>> origin/master
 								if inp.lower() in newauth.lower():
 									author = newauth 
 								rewrite = 1
@@ -80,6 +99,12 @@ def author(inp,nick = None):
 						bothauths = authorlist[page].split(":rewrite:")
 						orgauth = bothauths[0]
 						newauth = bothauths[1]
+<<<<<<< HEAD
+=======
+						if ":override:" in newauth:
+							newauth = newauth[10:]
+							authorstring = "Written by "+ author
+>>>>>>> origin/master
 						if newauth == author:
 							authorpage = "http://scp-wiki.net/"+page+" - "
 					if author == authorlist[page]:

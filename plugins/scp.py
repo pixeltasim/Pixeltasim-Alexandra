@@ -2,8 +2,12 @@ from whiffle import wikidotapi
 from util import hook
 import re
 import time,threading
+<<<<<<< HEAD
 import random 
 
+=======
+	
+>>>>>>> origin/master
 @hook.command
 def unused(inp):
 	api = wikidotapi.connection() 
@@ -38,6 +42,7 @@ def scpregex(match):
 			api = wikidotapi.connection() 
 			api.Site = "scp-wiki"
 			pages = api.refresh_pages() 
+<<<<<<< HEAD
 			page = re.sub("[!,_]",'',match.string.lower())
 			if "--" in page:
 				count = page.index("-")
@@ -46,6 +51,14 @@ def scpregex(match):
 				if "scp" in taglist[page]: 
 					rating = ratinglist[page]
 					ratesign = ""
+=======
+			page = re.sub("[!]",'',match.string.lower())
+			if api.page_exists(page): 
+				if "scp" in taglist[page]: 
+					rating = ratinglist[page]
+					if rating < 0:
+						ratesign = "-"
+>>>>>>> origin/master
 					if rating >= 0:
 						ratesign = "+" #adds + or minus sign in front of rating
 					ratestring = "Rating:"+ratesign+str(rating)+"" 
@@ -53,14 +66,18 @@ def scpregex(match):
 					if author == "":
 						author = "unknown"
 					authorstring = "Written by "+author
+<<<<<<< HEAD
 					randint = random.randint(0,10)
 					if randint ==0:
 						authorstring = "Written by some weirdo who doesn't warrant mentioning"
+=======
+>>>>>>> origin/master
 					if ":rewrite:" in author:
 						bothauths = authorlist[page].split(":rewrite:")
 						orgauth = bothauths[0]
 						newauth = bothauths[1]
 						authorstring = "Originally written by "+orgauth +", rewritten by "+newauth
+<<<<<<< HEAD
 					title = titlelist[page]
 					scptitle = scptitles[page]
 					sepstring = ", "
@@ -107,12 +124,29 @@ def scpregex(match):
 					else:
 						return "Page exists but is either not tagged as scp or is not in the current cache." 
 				return "Page does not exist, but you can create it here: " + "http://scp-wiki.net/"+page
+=======
+						if ":override:" in newauth:
+							author = newauth[10:]
+							authorstring = "Written by "+ author
+					title = titlelist[page]
+					sepstring = ", "
+					link = "http://scp-wiki.net/"+page.lower() 
+					return ""+title+" ("+ratestring+sepstring+authorstring+") - "+link 
+				else:
+					return "Page exists but is either untagged or not an scp." 
+			return "Page does not exist, but you can create it here: " + "http://scp-wiki.net/"+page
+		
+>>>>>>> origin/master
 @hook.command
 def untagged(inp):
 	api = wikidotapi.connection() 
 	api.Site = "scp-wiki"
 	pages = api.refresh_pages() 
+<<<<<<< HEAD
 	final = "The following pages are untagged: "
+=======
+	final = "The following pages are untagged: "
+>>>>>>> origin/master
 	first = 1
 	for page in pages:
 		try:
@@ -139,26 +173,44 @@ def linkregex(inp):
 	pages = api.refresh_pages() 
 	substrings = inp.string.split()
 	for ss in substrings:
+<<<<<<< HEAD
 		if "http://www.scp-wiki.net/"in ss or "http://scp-wiki.net/" in ss or "http://www.wikidot.scp-wiki.net/" in ss:
+=======
+		if "http://www.scp-wiki.net/"in ss :
+>>>>>>> origin/master
 			page = ss[24:]
 			if page.startswith("com/"):
 				page = ss[29:]
 			if api.page_exists(page): 
 				rating = ratinglist[page]
+<<<<<<< HEAD
 				ratesign = ""
+=======
+				if rating < 0:
+					ratesign = "-"
+>>>>>>> origin/master
 				if rating >= 0:
 					ratesign = "+" 
 				ratestring = "Rating:"+ratesign+str(rating)+"" 
 				author = authorlist[page]
 				authorstring = "Written by "+author
+<<<<<<< HEAD
 				randint = random.randint(0,10)
 				if randint ==0:
 					authorstring = "Written by some goofball who doesn't warrant mentioning"
+=======
+>>>>>>> origin/master
 				if ":rewrite:" in author:
 						bothauths = authorlist[page].split(":rewrite:")
 						orgauth = bothauths[0]
 						newauth = bothauths[1]
 						authorstring = "Originally written by "+orgauth +", rewritten by "+newauth
+<<<<<<< HEAD
+=======
+						if ":override:" in newauth:
+							author = newauth[10:]
+							authorstring = "Written by "+ author
+>>>>>>> origin/master
 				if author == "":
 					author = "unknown"
 				title = titlelist[page]

@@ -47,6 +47,12 @@ except Exception, e:
 
 print 'Running main loop'
 
+<<<<<<< HEAD
+=======
+#wikidot stuff
+thread.start_new_thread(cache_refresh, ())  #AUTOMATIC CACHE REFRESH HERE
+#thread.start_new_thread(ban_refresh, ())  #AUTOMATIC CACHE REFRESH HERE
+>>>>>>> origin/master
 
 while True:
 	reload()# these functions only do things
