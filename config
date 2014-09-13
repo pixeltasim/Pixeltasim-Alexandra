@@ -4,8 +4,13 @@
     "local irc":
     {
       "server": "irc.synirc.net",
+<<<<<<< HEAD
       "nick": "Alexandra",
       "channels": [""],
+=======
+      "nick": "",
+      "channels": ["#"],
+>>>>>>> origin/master
 	  "nickserv_password": ""
     }
   },
