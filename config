@@ -4,9 +4,9 @@
     "local irc":
     {
       "server": "irc.synirc.net",
-      "nick": "CakeBot",
-      "channels": ["#scptestbot"],
-	  "nickserv_password": "F1reball"
+      "nick": "",
+      "channels": ["#"],
+	  "nickserv_password": ""
     }
   },
   "prefix": ".,!",
