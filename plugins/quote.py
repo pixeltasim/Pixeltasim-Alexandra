@@ -44,7 +44,7 @@ def format_quote(q, num, n_quotes):
 @hook.command('q')
 @hook.command
 def quote(inp, nick='', chan='', db=None, admin=False):
-	if chan == "#site67":
+	if chan == "#site67" or chan == "thedeadlymoose":
 		".q/.quote [#chan] [nick] [#n]/.quote add|delete <nick> <msg> -- gets " \
 			"random or [#n]th quote by <nick> or from <#chan>/adds or deletes " \
 			"quote"
@@ -62,14 +62,15 @@ def quote(inp, nick='', chan='', db=None, admin=False):
 		if add:
 			quoted_nick, msg = add.groups()
 			try:
-				add_quote(db, chan, quoted_nick, nick, msg)
+				if chan == "thedeadlymoose":
+					add_quote(db, "#site67", quoted_nick, nick, msg)
+				else:
+					add_quote(db, chan, quoted_nick, nick, msg)
 				db.commit()
 			except db.IntegrityError:
 				return "message already stored, doing nothing."
 			return "quote added."
 		if delete:
-			if not admin:
-				return 'only admins can delete quotes'
 			quoted_nick, msg = delete.groups()
 			if del_quote(db, chan, quoted_nick, msg):
 				return "deleted quote '%s'" % msg

@@ -32,7 +32,6 @@ reload(init=True)
 
 thread.start_new_thread(cache_refresh, ()) 
 thread.start_new_thread(ban_refresh, ()) 
-#thread.start_new_thread(comment_refresh, ()) 
 
 print 'Connecting to IRC'
 

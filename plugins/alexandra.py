@@ -1,5 +1,6 @@
 from util import hook
 import random
+import re
 import __builtin__
 
 @hook.command
@@ -33,12 +34,11 @@ def insultpart(match):
 @hook.regex("alexandra is awesome")
 def awseomepart(match):
 	return "nonick:::D"
-@hook.regex("want to look at a draft")
-def draft(match, nick = None):
+@hook.regex(re.compile("look at a draft|see a draft|!draft|i have a draft|look over a draft"))
+def draft(match, nick = None,conn = None,chan = None):
+	conn.msg("#site67", "Alert: "+nick+" has a draft in "+chan)
 	return "nonick::"+nick+" has a draft guys!"
 @hook.regex("i have a draft")
-def draft2(match, nick = None):
-	return "nonick::"+nick+" has a draft guys!"
 		
 @hook.command()
 def say00101010(inp,conn= None, nick = None, chan = None ):

@@ -280,20 +280,5 @@ def ban_refresh():
 	ts = time.time()
 	__builtin__.lastbanrefresh = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 	
-def comment_refresh():
-	threading.Timer(900, comment_refresh).start (); 
-	api = wikidotapi.connection()
-	api.Site = "scp-wiki"
-	pages = api.refresh_pages() 
-	local_deletion_votes = []
-	__builtin__.deletion_votes = []
-	low_pages = []
-	for page in low_pages:
-		time.sleep(0.5)
-		x = api.server.posts.select({"site": api.Site, "page": page})
-		for id in x:
-			post = api.server.posts.get({"site": api.Site, "posts": [str(id)]})
-			if "Staff Post -- Deletion Vote".lower() in post["title"].lower():
-				local_deletion_votes.append(post["fullname"])
-	__builtin__.deletion_votes = local_deletion_votes
+
 	
