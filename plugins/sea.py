@@ -24,32 +24,24 @@ def return_final(page):
 			
 @hook.command("s")
 @hook.command("sea")
-def sea(inp): #this is for WL use, easily adaptable to SCP
+@hook.command("search")
+def search(inp): #this is for WL use, easily adaptable to SCP
 	".sea <Article Name> -- Will return first three pages containing exact matches to Article Name, with number of other matches"
-	api = wikidotapi.connection() #creates API connection
-	api.Site = "scp-wiki"
-	pages = api.refresh_pages() #refresh page list provided by the API, is only a list of strings
 	line = re.sub("[ ,',_]",'-',inp) #removes spaces and apostrophes and replaces them with dashes, per wikidot's standards
 	results = []
-	for page in titlelist: 
+	for page in scppages: 
 		if line.lower() in page.lower(): #check for first match to input
-			if api.page_exists(page.lower()): 
-				if "tale" in taglist[page] or "scp" in taglist[page] or "essay" in taglist[page]or "hub" in taglist[page]or "goi-format" in taglist[page]: #check for tag
-					results.append(page)
-					continue 
-			else:
-				print "UPDATE NEEDED! PAGE LISTED NO LONGER EXISTS:"
-				print page
-		if inp.lower() in titlelist[page].lower():
-			if api.page_exists(page.lower()):
-				if "tale" in taglist[page] or "scp" in taglist[page] or "essay" in taglist[page]or "hub" in taglist[page]or "goi-format" in taglist[page]: #check for tag
-					results.append(page)
+			if "tale" in taglist[page] or "scp" in taglist[page] or "essay" in taglist[page]or "hub" in taglist[page]or "goi-format" in taglist[page]: #check for tag
+				results.append(page)
+				continue 
 		try:
+			if inp.lower() in titlelist[page].lower():
+				if "tale" in taglist[page] or "scp" in taglist[page] or "essay" in taglist[page]or "hub" in taglist[page]or "goi-format" in taglist[page]: #check for tag
+					results.append(page)
 			if scptitles[page]:
 				if inp.lower() in re.sub('["]',"",scptitles[page].lower()):
-					if api.page_exists(page.lower()):
-						if "tale" in taglist[page] or "scp" in taglist[page]: #check for tag
-							results.append(page)
+					if "tale" in taglist[page] or "scp" in taglist[page]: #check for tag
+						results.append(page)
 		except KeyError:
 			pass
 	if results == []:
@@ -74,11 +66,6 @@ def sea(inp): #this is for WL use, easily adaptable to SCP
 @hook.command("sm")
 @hook.command("showmore")
 def showmore(inp):
-	global seaiter
-	global searesults
-	api = wikidotapi.connection() #creates API connection
-	api.Site = "scp-wiki"
-	pages = api.refresh_pages() #refresh page list provided by the API, is only a list of strings
 	final = ""
 	minval = seaiter*3+1
 	maxval = seaiter*3+3
@@ -94,5 +81,25 @@ def showmore(inp):
 		final += ", With " + str(val-maxval) + " more matches."
 	if final == "":
 		return "There are no more matches to show."
-	return "There are no more matches to show."
 	return final 
+	
+@hook.command()
+def statistic(inp):
+	tag_common={}
+	for page in scppages:
+		for tag in taglist[page]:
+			try:
+				if tag_common[tag]:
+					pass
+			except KeyError:
+				tag_common[tag] = 0
+		for tag in taglist[page]:
+			tag_common[tag] += ratinglist[page]
+	res = list(sorted(tag_common, key=tag_common.__getitem__, reverse=False))
+	val = 0
+	final = ""
+	for tag in res:
+		if val < 9:
+			final += tag +": +"+str(tag_common[tag])+", "
+		val+=1
+	return "Lowest rated tags:"+final

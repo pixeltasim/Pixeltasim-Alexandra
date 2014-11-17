@@ -4,9 +4,9 @@
     "local irc":
     {
       "server": "irc.synirc.net",
-      "nick": "CakeBot",
-      "channels": ["#scptestbot"],
-	  "nickserv_password": "F1reball"
+      "nick": "Alexandra",
+      "channels": ["#site19","#site67","#site17","#ethicscommittee","#scptestbot"],
+	  "nickserv_password": ""
     }
   },
   "prefix": ".,!",
@@ -14,7 +14,7 @@
   "disabled_commands": [],
   "acls": {},
   "api_keys": {
-
+	"twitter":""
   },
   "censored_strings":
   [

@@ -26,7 +26,7 @@ def get_memory(db, chan, word):
 @hook.command
 @hook.command("r")
 def remember(inp, nick='', chan='', db=None):
-	if chan == "#site67":
+	if chan == "#site67" or chan == "thedeadlymoose":
 		".remember <word> [+]<data> s/<before>/<after> -- maps word to data in the memory, or "
 		" does a string replacement (not regex)"
 		db_init(db)
@@ -68,8 +68,11 @@ def remember(inp, nick='', chan='', db=None):
 				tail = new_data
 			else:
 				return 'invalid replacement syntax -- try s$foo$bar instead?'
-
-		db.execute("replace into memory(chan, word, data, nick) values"
+		if chan == "thedeadlymoose":
+			db.execute("replace into memory(chan, word, data, nick) values"
+				   " (?,lower(?),?,?)", ("#site67", head, head + ' ' + tail, nick))
+		else:
+			db.execute("replace into memory(chan, word, data, nick) values"
 				   " (?,lower(?),?,?)", (chan, head, head + ' ' + tail, nick))
 		db.commit()
 

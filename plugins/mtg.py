@@ -7,7 +7,7 @@ from util import hook, http
 def mtg(inp):
     ".mtg <name> -- gets information about Magic the Gathering card <name>"
 
-    url = 'http://magiccards.info/query?v=card&s=cname'
+    url = 'http://magiccards.info/query?'
     h = http.get_html(url, q=inp)
 
     name = h.find('body/table/tr/td/span/a')

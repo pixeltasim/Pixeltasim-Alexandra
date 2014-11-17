@@ -77,8 +77,11 @@ def banevent(func,nick = None, host = None, user = None, conn = None,chan = None
 				if val == 1:
 					nicks = part.split()
 					for mnick in nicks:
-						if mnick.lower() == nick.lower():
-							banz = 1
+						if "-generic" in mnick.lower():
+							pass
+						else:
+							if mnick.lower() == nick.lower():
+								banz = 1
 				if val == 2:
 					ips = part.split()
 					hostmask = user+"@"+host
@@ -94,7 +97,10 @@ def banevent(func,nick = None, host = None, user = None, conn = None,chan = None
 				message = "Your nick/ip matches one in Alexandra's Database, Reason for ban: "+reason+". If you wish to appeal please join channel #site17 "
 				conn.cmd('KICK', [chan, nick,message ])
 				conn.cmd('MODE', [chan, '+b', user+"@"+host])
-				conn.msg(chan, "OP Alert: Autokicking "+nick+". They are "+nicks[0])
+				if "-generic" in nicks[0].lower():
+					conn.msg(chan,"OP Alert: Autokicking "+nick+". They are "+nicks[0].lower().replace("-generic",""))
+				else:
+					conn.msg(chan, "OP Alert: Autokicking "+nick+". They are "+nicks[0])
 				time.sleep(900)
 				conn.cmd('MODE', [chan, '-b', user+"@"+host])
 @hook.event("JOIN")
@@ -105,7 +111,10 @@ def joinevent(func,nick = None, conn = None,chan = None,user = None,host = None 
 			conn.cmd('KICK', [chan, nick, "Your nick contains inappropriate language, please use '/nick newnick' to change your name to something more appropriate. You may rejoin with a different nick after 10 seconds."])
 			conn.cmd('MODE', [chan, '+b', user+"@"+host])
 			conn.cmd('MODE', [chan, '+b', nick])
-			conn.msg(chan, "OP Alert: Autokicking "+nick)
+			if chan == "site19":
+				conn.msg(chan, "OP Alert: Autokicking "+nick)
+			else:
+				conn.msg("#site67", "OP Alert: "+nick+" has joined "+chan)
 			time.sleep(10)
 			conn.cmd('MODE', [chan, '-b', user+"@"+host])
 			time.sleep(890)

@@ -140,6 +140,9 @@ def dispatch(input, kind, func, args, autohelp=False):
         input = do_sieve(sieve, bot, input, func, kind, args)
         if input == None:
             return
+        for mnick in blacklist_nicks:
+            if input.nick.lower() == mnick.lower():
+			    return
 
     if autohelp and args.get('autohelp', True) and not input.inp \
             and func.__doc__ is not None:

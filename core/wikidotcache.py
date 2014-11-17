@@ -4,8 +4,10 @@ import datetime
 from whiffle import wikidotapi
 import pickle
 import __builtin__
+import twitter
 
 def cache_refresh(): #calls itself automatically once called for the first time
+	twitter_api = twitter.Api(consumer_key='',consumer_secret='', access_token_key='2288772386-', access_token_secret='')
 	threading.Timer(3600, cache_refresh).start (); 
 	api = wikidotapi.connection()
 	#overwrite update
@@ -34,6 +36,30 @@ def cache_refresh(): #calls itself automatically once called for the first time
 		if first != "Page":
 			overwritecache[first.lower()] = author 
 	print "Rewrite update complete."
+	source = api.server.pages.get_one({"site":api.Site,"page":"alexandra-glossary"})
+	content = source["content"]
+	fs = content.split("-----")
+	glossarylist = fs[1]
+	invglossary = glossarylist.split("\n")
+	localglossary = {}
+	for terms in invglossary:
+		parts = terms.split("||")
+		val = 0
+		writelist = []
+		first = ""
+		definition = ""
+		for part in parts:
+			val+=1
+			if val ==2:
+				#word
+				first = part 
+			if val ==3:
+				#def
+				definition = part 
+		if first != "Word":
+			localglossary[first] = definition 
+	__builtin__.termlist = localglossary
+	print "Glossary update complete."
 	#file reading
 	localauthorlist = {}
 	localtitlelist = {}
@@ -192,6 +218,7 @@ def cache_refresh(): #calls itself automatically once called for the first time
 	localtitlelist = {}
 	localtaglist = {}
 	localratinglist = {}
+	__builtin__.oldratinglist = ratinglist
 	for page in pages:
 		x = api.server.pages.get_meta({"site": api.Site, "pages": [page]})
 		cache = {}
@@ -220,7 +247,36 @@ def cache_refresh(): #calls itself automatically once called for the first time
 	__builtin__.titlelist = localtitlelist
 	__builtin__.taglist = localtaglist
 	__builtin__.ratinglist = localratinglist
+	
 	print "Cache refreshed!"
+	statuses = twitter_api.GetUserTimeline("scpwiki")
+	final = ""
+	for page in pages:
+		done = 0
+		for s in statuses:
+			if titlelist[page].lower() in s.text.lower():
+				done = 1
+		if done ==0:
+			try:
+				if oldratinglist[page] < 20:
+					if ratinglist[page] >=20:
+						try:
+							if scptitles[page]:
+								final = scptitles[page]+"- "+titlelist[page]+" by "+authorlist[page]+". http://scp-wiki.net/"+page
+								status = twitter_api.PostUpdate(final)
+						except KeyError:
+							final = "[ACCESS GRANTED] "+titlelist[page]+" by "+authorlist[page]+". http://scp-wiki.net/"+page
+							status = twitter_api.PostUpdate(final)
+			except KeyError:
+				if ratinglist[page] >= 20:
+					try:
+						if scptitles[page]:
+							final = scptitles[page]+"- "+titlelist[page]+" by "+authorlist[page]+". http://scp-wiki.net/"+page
+							status = twitter_api.PostUpdate(final)
+					except KeyError:
+						final ="[ACCESS GRANTED] "+titlelist[page]+" by "+authorlist[page]+". http://scp-wiki.net/"+page
+						status = twitter_api.PostUpdate(final)
+	print "Tweets sent"
 	__builtin__.scppagecache= newpagecache #__builtin__ means that pagecache is global and can be used by plugins
 
 	with open("cache.cache","wb") as f:
@@ -280,20 +336,5 @@ def ban_refresh():
 	ts = time.time()
 	__builtin__.lastbanrefresh = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 	
-def comment_refresh():
-	threading.Timer(900, comment_refresh).start (); 
-	api = wikidotapi.connection()
-	api.Site = "scp-wiki"
-	pages = api.refresh_pages() 
-	local_deletion_votes = []
-	__builtin__.deletion_votes = []
-	low_pages = []
-	for page in low_pages:
-		time.sleep(0.5)
-		x = api.server.posts.select({"site": api.Site, "page": page})
-		for id in x:
-			post = api.server.posts.get({"site": api.Site, "posts": [str(id)]})
-			if "Staff Post -- Deletion Vote".lower() in post["title"].lower():
-				local_deletion_votes.append(post["fullname"])
-	__builtin__.deletion_votes = local_deletion_votes
+
 	

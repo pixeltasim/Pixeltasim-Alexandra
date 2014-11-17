@@ -1,13 +1,9 @@
-from whiffle import wikidotapi
 from util import hook
 import random 
 
 @hook.command
 def author(inp,nick = None):
 	".author <Author Name> -- Will return details regarding the author"
-	api = wikidotapi.connection()
-	api.Site = "scp-wiki"
-	pages = api.refresh_pages()
 	authpages = []
 	totalrating = 0
 	taletotal = 0
@@ -22,8 +18,9 @@ def author(inp,nick = None):
 	orgauth = ""
 	newauth = ""
 	rewriteauthor =0
+	pagetitle = ""
 	try:
-		for page in pages:
+		for page in scppages:
 			if "scp" in taglist[page] or "tale" in taglist[page]: #makes sure only articles are counted
 				if ":rewrite:" in authorlist[page]: 
 					bothauths = authorlist[page].split(":rewrite:")
@@ -34,6 +31,7 @@ def author(inp,nick = None):
 				if author == authorlist[page] or rewriteauthor ==1:
 					found =1 
 					rewriteauthor = 0
+					
 					authpages.append(page)
 					pagetitle = titlelist[page]
 					pagerating = ratinglist[page]
@@ -122,7 +120,4 @@ def author(inp,nick = None):
 	if not authpages: #if no author pages are added 
 		return "Author not found."
 	final = authorpage+""+author +" has written " + str(scptotal) + " SCPs and "+str(taletotal)+" tales. They have " + str(totalrating)+ " net upvotes with an average rating of " + str(avgrating) + ". Their most recent article is " + pagetitle + "(Rating:" + str(pagerating) + ")"
-	if author == "Pixeltasim":
-		tempauth = random.choice(["Botlord","Cool Guy Numero Uno","Pixeltasim","Bestest guy ever","Why don't you love him?","Pixelspasm"])
-		return authorpage+""+tempauth+" has written " + str(scptotal) + " SCPs and "+str(taletotal)+" tales. They have " + str(totalrating)+ " net upvotes with an average rating of " + str(avgrating) + ". Their most recent article is " + pagetitle + "(Rating:" + str(pagerating) + ")"
 	return final
