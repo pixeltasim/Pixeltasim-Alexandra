@@ -26,14 +26,22 @@ def return_final(page):
 
 @hook.command
 def tags(inp):
+<<<<<<< HEAD
 	results =[]
+=======
+    results =[]
+>>>>>>> origin/master
 	terms = inp.split()
 	for page in scppages:
 		failure = 0
 		for term in terms:
 			if term not in taglist[page]:
 				failure = 1
+<<<<<<< HEAD
 		if failure == 0:
+=======
+		if failure != 0:
+>>>>>>> origin/master
 			results.append(page)
 	if results == []:
 		return "No matches found."

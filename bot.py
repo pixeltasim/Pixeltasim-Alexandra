@@ -32,8 +32,11 @@ reload(init=True)
 
 thread.start_new_thread(cache_refresh, ()) 
 thread.start_new_thread(ban_refresh, ()) 
+<<<<<<< HEAD
 __builtin__.blacklist_nicks = []
 __builtin__.tweeted_already=[]
+=======
+>>>>>>> origin/master
 
 print 'Connecting to IRC'
 

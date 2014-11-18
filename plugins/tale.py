@@ -25,6 +25,11 @@ def tale(inp): #this is for WL use, easily adaptable to SCP
 				title = titlelist[page]
 				sepstring = ", "
 				return ""+title+" ("+ratestring+sepstring+authorstring+") - http://scp-wiki.net/"+page.lower() 
+<<<<<<< HEAD
+=======
+			else:
+				return "Match found but page does not exist, please consult pixeltasim for error."
+>>>>>>> origin/master
 		if inp.lower() in titlelist[page].lower(): #check for first match to input
 			if "tale" in taglist[page] or "goi-format" in taglist[page]: #check for tag
 				rating = ratinglist[page] 
@@ -42,5 +47,10 @@ def tale(inp): #this is for WL use, easily adaptable to SCP
 				title = titlelist[page]
 				sepstring = ", "
 				return ""+title+" ("+ratestring+sepstring+authorstring+") - http://scp-wiki.net/"+page.lower() 
+<<<<<<< HEAD
+=======
+			else:
+				return "Match found but page does not exist, please consult pixeltasim for error."
+>>>>>>> origin/master
 	return "Page not found"
 		

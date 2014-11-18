@@ -34,10 +34,20 @@ def search(inp): #this is for WL use, easily adaptable to SCP
 			if "tale" in taglist[page] or "scp" in taglist[page] or "essay" in taglist[page]or "hub" in taglist[page]or "goi-format" in taglist[page]: #check for tag
 				results.append(page)
 				continue 
+<<<<<<< HEAD
 		try:
 			if inp.lower() in titlelist[page].lower():
 				if "tale" in taglist[page] or "scp" in taglist[page] or "essay" in taglist[page]or "hub" in taglist[page]or "goi-format" in taglist[page]: #check for tag
 					results.append(page)
+=======
+			else:
+				print "UPDATE NEEDED! PAGE LISTED NO LONGER EXISTS:"
+				print page
+		if inp.lower() in titlelist[page].lower():
+			if "tale" in taglist[page] or "scp" in taglist[page] or "essay" in taglist[page]or "hub" in taglist[page]or "goi-format" in taglist[page]: #check for tag
+				results.append(page)
+		try:
+>>>>>>> origin/master
 			if scptitles[page]:
 				if inp.lower() in re.sub('["]',"",scptitles[page].lower()):
 					if "tale" in taglist[page] or "scp" in taglist[page]: #check for tag
@@ -81,6 +91,7 @@ def showmore(inp):
 		final += ", With " + str(val-maxval) + " more matches."
 	if final == "":
 		return "There are no more matches to show."
+<<<<<<< HEAD
 	return final 
 	
 @hook.command()
@@ -103,3 +114,6 @@ def statistic(inp):
 			final += tag +": +"+str(tag_common[tag])+", "
 		val+=1
 	return "Lowest rated tags:"+final
+=======
+	return final 
+>>>>>>> origin/master

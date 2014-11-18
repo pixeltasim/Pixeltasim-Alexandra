@@ -58,6 +58,7 @@ def scpregex(match):
 				sepstring = ", "
 				link = "http://scp-wiki.net/"+page.lower() 
 				return ""+title+" ("+scptitle+sepstring+authorstring+sepstring+ratestring+") - "+link 
+<<<<<<< HEAD
 			except KeyError as e:
 				api = wikidotapi.connection() 
 				api.Site = "scp-wiki"
@@ -77,6 +78,25 @@ def scpregex(match):
 					return ""+title+" ("+ratestring+sepstring+authorstring+") - "+link 
 				else:
 					return "Page does not exist, but you can create it here: " + "http://scp-wiki.net/"+page
+=======
+			except KeyError:
+				api = wikidotapi.connection() 
+				api.Site = "scp-wiki"
+				rating = api.get_page_item(page,"rating")
+				ratesign = ""
+				if rating >= 0:
+					ratesign = "+" #adds + or minus sign in front of rating
+				ratestring = "Rating:"+ratesign+str(rating)+"" 
+				author = api.get_page_item(page,"created_by")
+				if author == "":
+					author = "unknown"
+				authorstring = "Written by "+author
+				title = api.get_page_item(page,"title")
+				sepstring = ", "
+				link = "http://scp-wiki.net/"+page.lower() 
+				return ""+title+" ("+ratestring+sepstring+authorstring+") - "+link 
+			#return "Page does not exist, but you can create it here: " + "http://scp-wiki.net/"+page
+>>>>>>> origin/master
 	else:
 		matches = match.string.lower().split()
 		scp_match = ""
@@ -106,6 +126,7 @@ def scpregex(match):
 				except KeyError:
 					api = wikidotapi.connection() 
 					api.Site = "scp-wiki"
+<<<<<<< HEAD
 					if api.page_exists(page):
 						rating = api.get_page_item(page,"rating")
 						ratesign = ""
@@ -122,6 +143,22 @@ def scpregex(match):
 						return ""+title+" ("+ratestring+sepstring+authorstring+") - "+link
 					else:
 						return "Page does not exist, but you can create it here: " + "http://scp-wiki.net/"+page
+=======
+					rating = api.get_page_item(page,"rating")
+					ratesign = ""
+					if rating >= 0:
+						ratesign = "+" #adds + or minus sign in front of rating
+					ratestring = "Rating:"+ratesign+str(rating)+"" 
+					author = api.get_page_item(page,"created_by")
+					if author == "":
+						author = "unknown"
+					authorstring = "Written by "+author
+					title = api.get_page_item(page,"title")
+					sepstring = ", "
+					link = "http://scp-wiki.net/"+page.lower() 
+					return ""+title+" ("+ratestring+sepstring+authorstring+") - "+link 
+				#return "Page does not exist, but you can create it here: " + "http://scp-wiki.net/"+page
+>>>>>>> origin/master
 @hook.command
 def untagged(inp):
 	api = wikidotapi.connection() 

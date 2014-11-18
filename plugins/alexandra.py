@@ -32,6 +32,7 @@ def insultpart(match):
 @hook.regex("alexandra is awesome")
 def awseomepart(match):
 	return "nonick:::D"
+<<<<<<< HEAD
 draftregex = ("look at a draft|see a draft|!draft|i have a draft|look over a draft|read a draft|see my draft|read my draft|look at my draft",re.I)
 @hook.regex(draftregex)
 def draft(match, nick = None,conn = None,chan = None):
@@ -39,3 +40,23 @@ def draft(match, nick = None,conn = None,chan = None):
 		conn.msg("#site67", "Alert: "+nick+" has a draft in "+chan)
 	return "nonick::"+nick+" has a draft guys!"
 		
+=======
+@hook.regex(re.compile("look at a draft|see a draft|!draft|i have a draft|look over a draft"))
+def draft(match, nick = None,conn = None,chan = None):
+	conn.msg("#site67", "Alert: "+nick+" has a draft in "+chan)
+	return "nonick::"+nick+" has a draft guys!"
+@hook.regex("i have a draft")
+		
+@hook.command()
+def say00101010(inp,conn= None, nick = None, chan = None ):
+	if nick =="Pixeltasim" and chan == nick:
+		parts= inp.split()
+		msg = ""
+		for i in range(1,len(parts)):
+			msg+=parts[i]+" "
+		conn.msg(parts[0], msg)
+@hook.command()
+def ignore00101010(inp,conn= None, nick = None, chan = None ):
+	if nick =="Pixeltasim" and chan == nick:
+		conn.cmd('IGNORE', [chan,inp])
+>>>>>>> origin/master
