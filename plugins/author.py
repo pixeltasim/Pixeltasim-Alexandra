@@ -8,6 +8,7 @@ def author(inp,nick = None):
 	totalrating = 0
 	taletotal = 0
 	scptotal = 0
+	goitotal = 0
 	pagerating = 0
 	author = inp
 	multimatch = []
@@ -21,7 +22,7 @@ def author(inp,nick = None):
 	pagetitle = ""
 	try:
 		for page in scppages:
-			if "scp" in taglist[page] or "tale" in taglist[page]: #makes sure only articles are counted
+			if "scp" in taglist[page] or "tale" in taglist[page] or "goi-format" in taglist[page]: #makes sure only articles are counted
 				if ":rewrite:" in authorlist[page]: 
 					bothauths = authorlist[page].split(":rewrite:")
 					orgauth = bothauths[0]
@@ -40,6 +41,8 @@ def author(inp,nick = None):
 						scptotal +=1
 					if  "tale" in taglist[page]:
 						taletotal+=1
+					if  "goi-format" in taglist[page]:
+						goitotal+=1
 				try:
 					if inp.lower() in authorlist[page].lower(): #this just matches the author with the first author match
 						if inp.lower() == authorlist[page].lower():
@@ -70,6 +73,8 @@ def author(inp,nick = None):
 								scptotal +=1
 							if  "tale" in taglist[page]:
 								taletotal+=1
+							if  "goi-format" in taglist[page]:
+								goitotal+=1
 				except AttributeError:
 					pass
 			else:
@@ -115,9 +120,9 @@ def author(inp,nick = None):
 				final += ", or "+auth+"? With " + str(moreauthors) + " more authors matching your query."
 		return final
 	avgrating = 0
-	if taletotal+scptotal is not 0: #just so no division by zero
-		avgrating = totalrating/(taletotal+scptotal)
+	if taletotal+scptotal+goitotal is not 0: #just so no division by zero
+		avgrating = totalrating/(taletotal+scptotal+goitotal)
 	if not authpages: #if no author pages are added 
 		return "Author not found."
-	final = authorpage+""+author +" has written " + str(scptotal) + " SCPs and "+str(taletotal)+" tales. They have " + str(totalrating)+ " net upvotes with an average rating of " + str(avgrating) + ". Their most recent article is " + pagetitle + "(Rating:" + str(pagerating) + ")"
+	final = authorpage+""+author +" has written " + str(scptotal) + " SCPs, "+str(taletotal)+" tales, and. "+str(goitotal)+" GOI formats. They have " + str(totalrating)+ " net upvotes with an average rating of " + str(avgrating) + ". Their most recent article is " + pagetitle + "(Rating:" + str(pagerating) + ")"
 	return final
