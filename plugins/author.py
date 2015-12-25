@@ -256,10 +256,6 @@ def authordetails(inp,nick=None):
 	api.Site = "alexandra-scp"
 	table = ""
 	for page in authpages:
-		try:
-			scptitle = scptitles[page]
-			table+="||**"+titlelist[page]+"** (@@"+scptitle+"@@)||Rating: "+str(ratinglist[page])+"||Tags: "+str(taglist[page])+"|| http://scp-wiki.net/"+page+"||\n"
-		except KeyError:
-			table+="||**"+titlelist[page]+"**||Rating: "+str(ratinglist[page])+"||Tags: "+str(taglist[page])+"|| http://scp-wiki.net/"+page+"||\n"
-	api.set_page_item(author.replace(" ","-").lower(), "content", "**Pages Authored:"+str(len(authpages))+"**\n**Number of SCPs Written:** "+str(scptotal)+"\n**Number of Tales Written:** "+str(taletotal)+"\n \n**Net Upvotes Received:** "+str(totalrating)+"\n**Average Rating per Page:** "+str(avgrating)+"\n**Average SCP Rating:** "+str(scprating/scptotal)+"\n++ Articles\n||Title||Rating||Tags||Link||\n"+table, create=True)
+		table+="||**"+titlelist[page]+"**||Rating: "+str(ratinglist[page])+"||Tags: "+str(taglist[page])+"|| http://scp-wiki.net/"+page+"||\n"
+	api.set_page_item(author.replace(" ","-").lower(), "content", "**Pages Authored:"+str(len(authpages))+"**\n \n**Number of SCPs Written:** "+str(scptotal)+"\n**Number of Tales Written:** "+str(taletotal)+"\n**Number of GOI Formats Written:** "+str(goitotal)+"\n \n**Net Upvotes Received:** "+str(totalrating)+"\n**Average Rating per Page:** "+str(avgrating)+"\n**Average SCP Rating:** "+str(scprating/scptotal)+"\n++ Articles\n||Title||Rating||Tags||Link||\n"+table, create=True)
 	return "Author detail page created http://alexandra-scp.wikidot.com/"+author.replace(" ","-").lower()
