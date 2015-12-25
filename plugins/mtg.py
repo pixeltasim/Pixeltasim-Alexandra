@@ -7,7 +7,7 @@ from util import hook, http
 def mtg(inp):
     ".mtg <name> -- gets information about Magic the Gathering card <name>"
 
-    url = 'http://magiccards.info/query?'
+    url = 'http://magiccards.info/query?v=card&s=cname'
     h = http.get_html(url, q=inp)
 
     name = h.find('body/table/tr/td/span/a')
@@ -27,7 +27,6 @@ def mtg(inp):
     text = re.sub(r'\.(\S)', r'. \1', text)  # fix spacing
 
     printings = card.find('td/small').text_content()
-    printings = re.search(r'Editions:(.*)Languages:', printings).group(1)
     printings = re.findall(r'\s*(.+?(?: \([^)]+\))*) \((.*?)\)',
                            ' '.join(printings.split()))
 
