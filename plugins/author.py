@@ -1,5 +1,6 @@
 from util import hook
 import random 
+from whiffle import wikidotapi
 
 @hook.command("au")
 @hook.command("author")
