@@ -1,7 +1,8 @@
 from util import hook
 import random 
 
-@hook.command
+@hook.command("au")
+@hook.command("author")
 def author(inp,nick = None):
 	".author <Author Name> -- Will return details regarding the author"
 	authpages = []
@@ -127,7 +128,7 @@ def author(inp,nick = None):
 	final = authorpage+""+author +" has written " + str(scptotal) + " SCPs, "+str(taletotal)+" tales, and. "+str(goitotal)+" GOI formats. They have " + str(totalrating)+ " net upvotes with an average rating of " + str(avgrating) + ". Their most recent article is " + pagetitle + "(Rating:" + str(pagerating) + ")"
 	return final
 @hook.command("ad")
-@hook.command
+@hook.command("authordetails")
 def authordetails(inp,nick=None):
 	authpages = []
 	totalrating = 0
