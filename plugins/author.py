@@ -127,7 +127,7 @@ def author(inp,nick = None):
 	final = authorpage+""+author +" has written " + str(scptotal) + " SCPs, "+str(taletotal)+" tales, and. "+str(goitotal)+" GOI formats. They have " + str(totalrating)+ " net upvotes with an average rating of " + str(avgrating) + ". Their most recent article is " + pagetitle + "(Rating:" + str(pagerating) + ")"
 	return final
 @hook.command("ad")
-@hook.command("authordetails")
+@hook.command
 def authordetails(inp,nick=None):
 	authpages = []
 	totalrating = 0
