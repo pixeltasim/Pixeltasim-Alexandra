@@ -4,18 +4,8 @@
     "local irc":
     {
       "server": "irc.synirc.net",
-<<<<<<< HEAD
       "nick": "Alexandra",
-      "channels": ["#site19","#site67","#site17","#ethicscommittee","#scptestbot"],
-=======
-<<<<<<< HEAD
-      "nick": "Alexandra",
-      "channels": [""],
-=======
-      "nick": "",
-      "channels": ["#"],
->>>>>>> origin/master
->>>>>>> origin/master
+      "channels": [],
 	  "nickserv_password": ""
     }
   },
@@ -24,8 +14,11 @@
   "disabled_commands": [],
   "acls": {},
   "api_keys": {
-	"twitter":""
+	"twitter":"9SbBfnKR34CL4cFseXKCysMUn",
+	"google":"",
+	"youtube":""
   },
+  "ignorebots":"False",
   "censored_strings":
   [
     "DCC SEND",
